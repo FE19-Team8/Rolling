@@ -1,4 +1,6 @@
-# Logs
+# =====================
+# Logs (로그 파일 무시)
+# =====================
 logs
 *.log
 npm-debug.log*
@@ -7,18 +9,63 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# =====================
+# Dependencies & build outputs (설치/빌드 산출물 무시)
+# =====================
 node_modules
 dist
 dist-ssr
 *.local
 
-# Editor directories and files
+# VSCode - 개인 설정 무시
 .vscode/*
-!.vscode/extensions.json
-.idea
+!.vscode/extensions.json   
+# 팀 공용 확장 추천은 공유
+# !.vscode/settings.json     
+# (옵션) 팀 공용 설정 원하면 주석 풀기
+
+# =====================
+# Environment variables (환경 변수 파일 무시)
+# =====================
+.env
+.env.*        
+# .env.local, .env.development 등 모두 무시
+!.env.example 
+# 예시 파일은 공유
+
+# =====================
+# macOS system files (맥 OS 자동 생성 파일 무시)
+# =====================
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+__MACOSX/
+
+# =====================
+# Windows system files (윈도우 자동 생성 파일 무시)
+# =====================
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
