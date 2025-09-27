@@ -7,7 +7,7 @@
 <!--
 | Prop     | 타입                                          | 기본값             | 설명               |
 |----------|-----------------------------------------------| -------------------|--------------------|
-| variant  | primary | secondary | outlined                | primary            | 버튼 색상/스타일   |
+| variant  | primary | secondary | outlined | gray         | primary            | 버튼 색상/스타일   |
 | size     | small | medium | large | compact              | small              | 버튼 크기          |
 | shape    | circle                                        |                    | 버튼 모양          |
 | disabled | boolean                                       | false              | 버튼 비활성화 여부 |
@@ -53,6 +53,7 @@ import Button from './components/Button';
 <Button shape="circle" iconName="check" />
 
 // 원형 버튼
+// shape="circle"는 고정크기여서 크기를 넣지말아주세요
 <Button shape="circle" iconName="plus" />
 
 // 비활성화
