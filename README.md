@@ -1,16 +1,35 @@
-# React + Vite
+# Rolling
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 소개
 
-Currently, two official plugins are available:
+**메시지 작성·수정·삭제, 이모지 반응, 모달·토스트 UI** 등  
+다양한 기능을 제공하는 **웹 기반 롤링페이퍼 앱**입니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+기간 : `2025-09-24` ~ `2025-10-16` (약 3주)
 
-## React Compiler
+## 목차
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- [팀원 및 역할](#-팀원-및-역할)
+- [프로젝트 목표](#-프로젝트-목표)
+- [주요 기능](#-주요-기능)
+- [기술 스택](#-기술-스택)
+- [프로젝트 구조](#-프로젝트-구조)
+- [설치 및 실행](#-설치-및-실행)
+- [환경변수 설정](#-환경변수-설정)
+- [배포 링크](#-배포-링크)
+- [동작 시연](#-동작-시연)
+- [개선 계획](#-개선-계획)
+- [회고](#-회고)
 
-## Expanding the ESLint configuration
+## 팀원 및 역할
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+`[팀장]`
+
+- 방다연
+
+`[팀원]`
+
+- 김동영
+- 김준열
+- 노혁
+- 박유진
