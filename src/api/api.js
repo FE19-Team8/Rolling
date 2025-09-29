@@ -10,7 +10,7 @@ const api = axios.create({
 
 // 추후 에러페이지 여러 개 필요해 질 때 분기 추가
 api.interceptors.response.use(
-  (res) => res,
+  (res) => res.data,
   (err) => Promise.reject(err)
 );
 
