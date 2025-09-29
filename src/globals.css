@@ -51,6 +51,29 @@
   font-weight: 100 900;
   font-display: swap;
 }
+@font-face {
+  font-family: NotoSans;
+  src: url('./assets/fonts/NotoSansVariable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NanumMyeongjo';
+  src: url('./assets/fonts/NanumMyeongjo.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NanumLetter';
+  src: url('./assets/fonts/NanumLetter.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: 'Pinkfong';
@@ -63,6 +86,9 @@
 @theme {
   --font-pretendard: Pretendard, sans-serif;
   --font-pinkfong: Pinkfong, sans-serif;
+  --font-noto-sans: NotoSans, sans-serif;
+  --font-nanum-myeongjo: NanumMyeongjo, sans-serif;
+  --font-nanum-letter: NanumLetter, sans-serif;
 }
 
 @layer base {
