@@ -1,45 +1,26 @@
+import clsx from "clsx";
+
+const BASE_CLASSES =
+  "w-full h-[50px] rounded-lg border outline-none px-4 py-3  transition-colors text-base placeholder-gray-500 text-gray-900 ";
+
+const VARIANT_CLASSES = {
+  default:
+    "border-gray-300 bg-white hover:border-gray-500 focus:border-gray-700 focus:ring-1 focus:ring-gray-700",
+  error: "border-red-500",
+  disabled: "border-gray-300 bg-gray-100 text-gray-400 cursor-not-allowed",
+};
 const Input = ({
   placeholder,
   value,
-  onChange,
-  disabled = false,
-  error = false,
-  errorMessage,
   type = "text",
+  variant = "default",
+  errorMessage,
+  ...props
 }) => {
-  const baseClasses = [
-    "w-full",
-    "h-[50px]",
-    "pt-3",
-    "pr-4",
-    "pb-3",
-    "pl-4",
-    "border",
-    "rounded-lg",
-    "outline-none",
-    "transition-colors",
-    "text-base",
-  ];
-
-  if (error) {
-    baseClasses.push("border-red-500", "bg-red-50");
-  } else if (disabled) {
-    baseClasses.push(
-      "border-gray-300",
-      "bg-gray-100",
-      "text-gray-400",
-      "cursor-not-allowed"
-    );
-  } else {
-    baseClasses.push(
-      "border-gray-300",
-      "bg-white",
-      "hover:border-gray-500",
-      "focus:border-gray-700",
-      "focus:ring-1",
-      "focus:ring-gray-700"
-    );
-  }
+  const inputClasses = clsx(
+    BASE_CLASSES,
+    VARIANT_CLASSES[variant] || VARIANT_CLASSES.default
+  );
 
   return (
     <div className="w-full">
@@ -47,12 +28,11 @@ const Input = ({
         type={type}
         placeholder={placeholder}
         value={value}
-        onChange={onChange}
-        disabled={disabled}
-        className={baseClasses.join(" ")}
+        className={inputClasses}
+        {...props}
       />
-      {error && errorMessage && (
-        <p className="mt-1 text-error px-1 text-sm">{errorMessage}</p>
+      {variant === "error" && errorMessage && (
+        <p className="mt-2 text-error px-1 text-sm">{errorMessage}</p>
       )}
     </div>
   );
