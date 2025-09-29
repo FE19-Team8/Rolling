@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/*=== COLORS === */
 @theme {
 	--color-purple100: #F8F0FF;
 	--color-purple200: #ECD9FF;
@@ -41,4 +42,31 @@
 	
 	--color-error: #DC3A3A;
 	--color-surface: #DC3A3A;
+}
+
+/*=== FONTS === */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('./assets/fonts/PretendardVariable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pinkfong';
+  src: url('./assets/fonts/Pinkfong.otf')format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-pretendard: Pretendard, sans-serif;
+  --font-pinkfong: Pinkfong, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-pretendard;
+  }
 }
