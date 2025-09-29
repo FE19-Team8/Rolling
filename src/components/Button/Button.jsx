@@ -16,11 +16,23 @@ const Button = ({
   type = "button",
   shape,
   iconName,
+  paddingX,
+  paddingY,
 }) => {
   const icon = iconName ? ICONS[iconName] : null;
 
+  const inlineStyle =
+    size === "custom" && paddingX && paddingY
+      ? {
+          paddingLeft: `${paddingX}px`,
+          paddingRight: `${paddingX}px`,
+          paddingTop: `${paddingY}px`,
+          paddingBottom: `${paddingY}px`,
+        }
+      : {};
+
   const buttonClasses = clsx(
-    "cursor-pointer flex items-center justify-center gap-2 transition-colors",
+    "cursor-pointer flex items-center justify-center gap-[10px] transition-colors",
     VARIANT_CLASSES[variant],
     shape === "circle" ? SHAPE_CLASSES.circle : SIZE_CLASSES[size],
     shape === "circle" ? "rounded-full" : "rounded-xl"
@@ -30,6 +42,7 @@ const Button = ({
     <button
       type={type}
       disabled={disabled}
+      style={inlineStyle}
       onClick={onClick}
       className={buttonClasses}
     >

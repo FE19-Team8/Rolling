@@ -10,19 +10,22 @@ import ShareIcon from "../../assets/icons/ic_share.svg?react";
 
 export const VARIANT_CLASSES = {
   primary:
-    "bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800 active:ring-0 focus:bg-purple-800 focus:ring-1 focus:ring-purple-900 disabled:bg-gray-300 disabled:text-white disabled:cursor-not-allowed",
+    "bg-purple-600 text-white hover:bg-purple-700 active:bg-purple-800 focus:bg-purple-800 focus:border-purple-900 disabled:bg-gray-300 disabled:text-white disabled:cursor-not-allowed ",
+
   secondary:
-    "border border-purple-600 text-purple-700 bg-white hover:bg-purple-100 active:bg-purple-100 active:ring-0 focus:bg-white focus:ring-purple-800 disabled:bg-gray-300 disabled:text-white disabled:cursor-not-allowed disabled:text-white disabled:border disabled:border-gray-300",
+    "border border-purple-600 text-purple-700 bg-white hover:bg-purple-100 active:bg-purple-100 focus:bg-white focus:border-purple-800 disabled:bg-gray-300 disabled:text-white disabled:cursor-not-allowed disabled:border disabled:border-gray-300",
+
   outlined:
-    "border border-gray-300 bg-white text-gray-500 hover:bg-gray-300 active:bg-gray-300 active:ring-0 focus:bg-white focus:ring-1 focus:ring-gray-500 disabled:bg-gray-300 disabled:text-white disabled:cursor-not-allowed",
-  gray: "bg-gray-500 text-white hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-700 focus:ring-1 focus:ring-gray-800 cursor-pointer disabled:bg-gray-300 disabled:text-white disabled:cursor-not-allowed",
+    "border border-gray-300 bg-white text-gray-9 00 hover:bg-gray-100 active:bg-gray-100 active:border-gray-300 focus:bg-white focus:border-gray-900 disabled:bg-gray-300 disabled:text-white disabled:cursor-not-allowed",
+
+  gray: "bg-gray-500 text-white hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-700 focus:border-gray-800 cursor-pointer disabled:bg-gray-300 disabled:text-white disabled:cursor-not-allowed",
 };
 
 export const SIZE_CLASSES = {
-  small: "w-32 h-10 px-4",
-  medium: "w-72 h-14 py-4 px-2",
-  large: "w-full h-14 py-4 px-2",
-  compact: "h-9 py-4 px-2",
+  small: "w-[120px] px-4 py-[7px] text-[16px] font-normal leading-[26px]",
+  medium: "w-[280px] py-[14px] px-6 text-[18px] font-bold leading-7 ",
+  large: "w-full py-[14px] px-6  text-[18px] leading-[28px] font-bold",
+  custom: "text-[14px] leading-6 font-bold",
 };
 
 export const SHAPE_CLASSES = {
