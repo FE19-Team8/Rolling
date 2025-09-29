@@ -4,17 +4,15 @@
 
 ## Props
 
-<!--
-| Prop     | 타입                                          | 기본값             | 설명               |
-|----------|-----------------------------------------------| -------------------|--------------------|
-| variant  | primary | secondary | outlined | gray         | primary            | 버튼 색상/스타일   |
-| size     | small | medium | large | compact              | small              | 버튼 크기          |
-| shape    | circle                                        |                    | 버튼 모양          |
-| disabled | boolean                                       | false              | 버튼 비활성화 여부 |
-| iconName | string                                        | undefined          | 내장 아이콘 이름   |
-| onClick  | function                                      | -                  | 클릭 이벤트 핸들러 |
-| type     | button | submit                               | button             | 버튼 타입          |
--->
+| Prop     | 타입                                        | 기본값      | 설명               |
+| -------- | ------------------------------------------- | ----------- | ------------------ |
+| variant  | `primary \| secondary \| outlined \| \gray` | `primary`   | 버튼 색상/스타일   |
+| size     | `small \| medium \| large \| compact`       | `small`     | 버튼 크기          |
+| shape    | `default \| circle`                         | `default`   | 버튼 모양          |
+| disabled | `boolean`                                   | `false`     | 버튼 비활성화 여부 |
+| iconName | `string`                                    | `undefined` | 내장 아이콘 이름   |
+| onClick  | `function`                                  | -           | 클릭 이벤트 핸들러 |
+| type     | `button \| submit `                         | `button`    | 버튼 타입          |
 
 ## 내장 아이콘 종류
 
