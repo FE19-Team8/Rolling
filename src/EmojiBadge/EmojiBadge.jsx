@@ -1,20 +1,29 @@
+import clsx from "clsx";
+
 const BASE_CLASSES = [
-  "rounded-full",
-  "w-16",
-  "h-9",
-  "px-3",
+  "flex",
+  "flex-row",
+  "items-start",
+  "w-fit",
   "py-2",
+  "px-3",
+  "rounded-[32px]",
   "bg-black/[.54]",
   "text-white",
-  "text-base/5",
+  "text-[16px]",
+  "leading-5",
+  "font-normal",
 ];
 
 const DEFAULT_EMOJI = "🙂";
 
 const EmojiBadge = ({ emoji = DEFAULT_EMOJI, count = 0 }) => {
+  const displayCount = count > 99 ? "99+" : count;
+
   return (
-    <div className={BASE_CLASSES.join(" ")}>
-      {emoji} {count}
+    <div className={clsx(BASE_CLASSES)}>
+      <span>{emoji}</span>
+      <span>{displayCount}</span>
     </div>
   );
 };
