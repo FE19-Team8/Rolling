@@ -1,24 +1,24 @@
 import Profile from "../Profile/Profile";
+import clsx from "clsx";
 
 const ProfileStack = ({ profiles = [], remainingCount, onClick }) => {
   const visibleProfiles = profiles.slice(0, 3);
 
   return (
     <div className="flex items-center">
-      {/* 프로필 이미지들 (최대 3개, sm 크기 고정) */}
       {visibleProfiles.map((profile, index) => (
         <div
           key={profile.id || index}
-          className="relative"
-          style={{
-            marginLeft: index > 0 ? "-10px" : "0",
-            zIndex: index + 1,
-          }}
+          className={clsx(
+            "relative",
+            index > 0 && "-ml-2.5", // -10px
+            `z-[${index + 1}]`
+          )}
         >
           <Profile
             src={profile.src}
             alt={profile.alt || `프로필 ${index + 1}`}
-            size="sm" // sm 크기 고정
+            size="sm"
             bordered
             onClick={onClick}
           />
@@ -27,13 +27,12 @@ const ProfileStack = ({ profiles = [], remainingCount, onClick }) => {
 
       {remainingCount > 0 && (
         <div
-          className="relative flex items-center justify-center bg-white rounded-full border border-gray-300 text-gray-600 font-medium w-7 h-7 text-xs"
-          style={{
-            marginLeft: "-10px",
-            zIndex: 4,
-          }}
+          className={clsx(
+            "relative flex items-center justify-center bg-white rounded-full border border-gray-300 text-gray-600 font-medium min-w-7 h-7 px-1 text-xs",
+            "-ml-2.5 z-[4]"
+          )}
         >
-          +{remainingCount}
+          {remainingCount > 99 ? "99+" : `+${remainingCount}`}
         </div>
       )}
     </div>
