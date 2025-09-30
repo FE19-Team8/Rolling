@@ -2,14 +2,14 @@
 
 ## Props
 
-| Prop       | 타입             | 기본값            | 설명                    |
-| ---------- | ---------------- | ----------------- | ----------------------- |
-| `src`      | `string`         | -                 | 프로필 이미지 URL       |
-| `alt`      | `string`         | `'프로필 이미지'` | 이미지 대체 텍스트      |
-| `size`     | `sm \| md \| lg` | `md`              | 프로필 크기             |
-| `selected` | `boolean`        | `false`           | 선택된 상태 (보라색 링) |
-| `bordered` | `boolean`        | `false`           | 일반 테두리 (회색 링)   |
-| `onClick`  | `() => void`     | -                 | 클릭 이벤트 핸들러      |
+| Prop       | 타입                       | 기본값            | 설명                        |
+| ---------- | -------------------------- | ----------------- | --------------------------- |
+| `src`      | `string`                   | -                 | 프로필 이미지 URL           |
+| `alt`      | `string`                   | `'프로필 이미지'` | 이미지 대체 텍스트          |
+| `size`     | `small \| medium \| large` | `md`              | 프로필 크기                 |
+| `selected` | `boolean`                  | `false`           | 선택된 상태 (보라색 테두리) |
+| `bordered` | `boolean`                  | `false`           | 일반 테두리 (흰색 테두리)   |
+| `onClick`  | `() => void`               | -                 | 클릭 이벤트 핸들러          |
 
 ## 기본 사용법
 
@@ -34,7 +34,8 @@ import Profile from './components/Profile';
   onClick={() => console.log('프로필 클릭')}
 />
 
-// 기본 이미지 (src 없음)
+// 기본 이미지 (회색 원 안에 디폴트 아이콘 표시)
+// size에 따라 아이콘 패딩이 달라짐 (small=p-2, medium=p-4, large=p-6)
 <Profile />
 ```
 
