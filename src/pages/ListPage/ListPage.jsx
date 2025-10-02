@@ -10,10 +10,10 @@ const ListPage = () => {
 
   const { recipients, loading, error } = useRecipients();
   const popularSorted = [...(recipients.results || [])].sort(
-    (a, b) => b.messageCount - a.messageCount
+    (a, b) => b.messageCount - a.messageCount,
   );
   const recentSorted = [...(recipients.results || [])].sort(
-    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
   );
 
   if (loading) return <div>로딩중...</div>;
