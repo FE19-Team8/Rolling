@@ -4,6 +4,6 @@ const ErrorPage = () => {
       <p> this is error page.</p>
     </div>
   );
-}
+};
 
 export default ErrorPage;

@@ -2,6 +2,7 @@ import js from '@eslint/js';
 import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import prettierPlugin from 'eslint-plugin-prettier';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
@@ -13,6 +14,9 @@ export default defineConfig([
       reactHooks.configs['recommended-latest'],
       reactRefresh.configs.vite,
     ],
+    plugins: {
+      prettier: prettierPlugin,
+    },
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -29,16 +33,14 @@ export default defineConfig([
       'id-length': [
         'error',
         {
-          // 변수명 최소 2글자
-          min: 2,
+          min: 2, // 변수명 최소 2글자
           exceptions: ['a', 'b', 'i', 'j', 'x', 'y'], // 특정 단일 글자 변수명 허용
         },
       ],
       camelcase: ['error', { properties: 'always' }], // camelCase 사용 강제
       'new-cap': ['error', { newIsCap: true }], // 생성자 함수는 대문자로 시작
       'no-restricted-syntax': [
-        // this 사용 금지
-        'error',
+        'error', // this 사용 금지
         {
           selector: 'ThisExpression',
         },
@@ -59,14 +61,28 @@ export default defineConfig([
       // =====================
       // 포맷팅 규칙
       // =====================
-      quotes: ['error', 'single'], // 작음 따옴표 사용
-      semi: ['error', 'always'], // 세미콜론 필수
-      indent: ['error', 2, { SwitchCase: 1 }], // 들여쓰기 2칸 사용, switch문 case는 1칸 들여쓰기
+      // quotes: ['error', 'single'], // 작음 따옴표 사용
+      // semi: ['error', 'always'], // 세미콜론 필수
+      // indent: ['error', 2, { SwitchCase: 1 }], // 들여쓰기 2칸 사용, switch문 case는 1칸 들여쓰기
 
       // =====================
       // React 관련
       // =====================
       'react/react-in-jsx-scope': 'off',
+
+      // =====================
+      // Prettier 관련
+      // =====================
+      'prettier/prettier': [
+        'error',
+        {
+          singleQuote: true,
+          semi: true,
+          endOfLine: 'auto',
+          tabWidth: 2,
+          useTabs: false,
+        },
+      ],
     },
     settings: {
       react: { version: 'detect' },

@@ -4,6 +4,6 @@ const PostingPage = () => {
       <p> this is posting page.</p>
     </div>
   );
-}
+};
 
 export default PostingPage;

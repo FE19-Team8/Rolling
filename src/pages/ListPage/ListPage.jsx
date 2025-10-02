@@ -4,6 +4,6 @@ const ListPage = () => {
       <p> this is list page.</p>
     </div>
   );
-}
+};
 
 export default ListPage;

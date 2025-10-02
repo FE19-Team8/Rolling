@@ -4,6 +4,6 @@ const MessagePage = () => {
       <p> this is message page.</p>
     </div>
   );
-}
+};
 
 export default MessagePage;
