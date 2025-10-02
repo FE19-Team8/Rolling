@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import api from '../../api/api';
 
-const useRecipients = () => {
+export const useRecipients = () => {
   const [recipients, setRecipients] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -23,5 +23,3 @@ const useRecipients = () => {
 
   return { recipients, error, loading };
 };
-
-export default useRecipients;
