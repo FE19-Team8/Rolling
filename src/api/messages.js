@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import api from "./api";
 import { throwIfMissing } from "../utils/validators";
 
@@ -12,15 +14,15 @@ const END_POINT = "/19-8/messages/";
 // export const putMessage = (id) => api.put(`${END_POINT}${id}/`);
 
 export const createMessage = (
-  recipient_id = throwIfMissing("recipient_id"),
-  data = throwIfMissing("data")
-) => api.post(`/19-8/recipients/${recipient_id}/messages/`, data);
+  recipientId = throwIfMissing("recipient_id"),
+  data = throwIfMissing("data"),
+) => api.post(`/19-8/recipients/${recipientId}/messages/`, data);
 
 export const getMessageList = (
-  recipient_id = throwIfMissing("recipient_id"),
-  options
+  recipientId = throwIfMissing("recipient_id"),
+  options,
 ) =>
-  api.get(`/19-8/recipients/${recipient_id}/messages/`, {
+  api.get(`/19-8/recipients/${recipientId}/messages/`, {
     params: options,
   });
 

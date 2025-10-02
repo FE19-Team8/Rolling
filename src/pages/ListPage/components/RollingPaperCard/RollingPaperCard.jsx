@@ -1,22 +1,22 @@
-import ProfileStack from "../../../../components/ProfileStack/ProfileStack";
-import EmojiBadge from "../../../../EmojiBadge/EmojiBadge";
-import Divider from "../../../../components/Divider/Divder";
+import ProfileStack from '../../../../components/ProfileStack/ProfileStack';
+import EmojiBadge from '../../../../EmojiBadge/EmojiBadge';
+import Divider from '../../../../components/Divider/Divder';
 
 // 서버 연결 후 지움
 const DEFAULT = {
-  NAME: "Sowon",
+  NAME: 'Sowon',
   PROFILES: [
-    { id: 1, src: "/images/default_profile.png" },
-    { id: 2, src: "/images/default_profile.png" },
-    { id: 3, src: "/images/default_profile.png" },
+    { id: 1, src: '/images/default_profile.png' },
+    { id: 2, src: '/images/default_profile.png' },
+    { id: 3, src: '/images/default_profile.png' },
   ],
   MESSAGE_COUNT: 30,
   TOP_REACTIONS: [
-    { emoji: "😀", count: 11 },
-    { emoji: "👍", count: 7 },
-    { emoji: "😍", count: 9 },
+    { emoji: '😀', count: 11 },
+    { emoji: '👍', count: 7 },
+    { emoji: '😍', count: 9 },
   ],
-  BACKGROUND_COLOR: "beige",
+  BACKGROUND_COLOR: 'beige',
   BACKGROUND_IMAGE_URL: null,
 };
 
@@ -29,33 +29,33 @@ export default function RollingPaperCard({
   backgroundImageURL = DEFAULT.BACKGROUND_IMAGE_URL,
 }) {
   const baseStyle = `flex flex-col justify-between w-[275px] h-[260px] px-6 py-5 rounded-[16px] shadow-[0_2px_12px_0_#00000014]`;
-  const bodyStyle = "flex flex-col gap-3";
+  const bodyStyle = 'flex flex-col gap-3';
   const nameStyle =
-    "font-bold text-2xl leading-9 pt-3 tracking-[-0.01em] line-clamp-2 " +
-    (backgroundImageURL ? "text-white" : "text-gray900");
+    'font-bold text-2xl leading-9 pt-3 tracking-[-0.01em] line-clamp-2 ' +
+    (backgroundImageURL ? 'text-white' : 'text-gray900');
   const accentedTextStyle =
-    "inline-flex text-md font-bold leading-[26px] tracking-[-0.01em] " +
-    (backgroundImageURL ? "text-white" : "text-gray700");
+    'inline-flex text-md font-bold leading-[26px] tracking-[-0.01em] ' +
+    (backgroundImageURL ? 'text-white' : 'text-gray700');
   const textStyle =
-    "text-md leading-[26px] tracking-[-0.01em] " +
-    (backgroundImageURL ? "text-white" : "text-gray700");
+    'text-md leading-[26px] tracking-[-0.01em] ' +
+    (backgroundImageURL ? 'text-white' : 'text-gray700');
 
   // BACKGROUND SETTING
   const colorBackgroundMap = {
-    beige: "/images/card_bg/bg_beige.png",
-    purple: "/images/card_bg/bg_purple.png",
-    blue: "/images/card_bg/bg_blue.png",
-    green: "/images/card_bg/bg_green.png",
+    beige: '/images/card_bg/bg_beige.png',
+    purple: '/images/card_bg/bg_purple.png',
+    blue: '/images/card_bg/bg_blue.png',
+    green: '/images/card_bg/bg_green.png',
   };
   const backgroundImage = backgroundImageURL
     ? `url(${backgroundImageURL})`
-    : `url(${colorBackgroundMap[backgroundColor] ?? ""})`;
+    : `url(${colorBackgroundMap[backgroundColor] ?? ''})`;
 
   // MESSAGE COUNT SETTING
-  let overMaximum = "";
+  let overMaximum = '';
   if (messageCount > 99) {
     messageCount = 99;
-    overMaximum = "+";
+    overMaximum = '+';
   }
 
   return (
@@ -95,8 +95,8 @@ export default function RollingPaperCard({
           />
         </div>
         <div className="flex gap-2">
-          {topReactions.map((r, i) => (
-            <EmojiBadge key={i} emoji={r.emoji} count={r.count} />
+          {topReactions.map((reaction, i) => (
+            <EmojiBadge key={i} emoji={reaction.emoji} count={reaction.count} />
           ))}
         </div>
       </footer>
