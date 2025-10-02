@@ -1,5 +1,5 @@
-import { useMemo, useState } from "react";
-import EmojiBadge from "../EmojiBadge/EmojiBadge";
+import { useMemo, useState } from 'react';
+import EmojiBadge from '../EmojiBadge/EmojiBadge';
 
 //예시 뱃지리스트 리스트를 사용하시는 페이지에서 쓰세요
 // const mockBadges: Badge[] = [
@@ -38,7 +38,7 @@ const BadgeList = ({ badges = [], showMore = true }) => {
           onClick={() => setIsExpanded(!isExpanded)}
           className="text-sm text-blue-600 underline"
         >
-          {isExpanded ? "접기 ▲" : "더보기 ▼"}
+          {isExpanded ? '접기 ▲' : '더보기 ▼'}
         </button>
       )}
     </>

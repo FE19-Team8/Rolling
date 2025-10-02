@@ -1,13 +1,13 @@
 import './globals.css';
-import './App.css'
-import MainPage from './pages/MainPage/MainPage'
+import './App.css';
+import MainPage from './pages/MainPage/MainPage';
 
 function App() {
   return (
     <>
-      <MainPage/>
+      <MainPage />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
