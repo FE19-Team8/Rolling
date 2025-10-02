@@ -1,19 +1,19 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
 import {
   VARIANT_CLASSES,
   SIZE_CLASSES,
   SHAPE_CLASSES,
   ICONS,
-} from "./button.constants";
+} from './button.constants';
 
 const Button = ({
-  variant = "primary",
-  size = "small",
+  variant = 'primary',
+  size = 'small',
   disabled = false,
   children,
   onClick,
-  type = "button",
+  type = 'button',
   shape,
   iconName,
   paddingX,
@@ -22,7 +22,7 @@ const Button = ({
   const icon = iconName ? ICONS[iconName] : null;
 
   const inlineStyle =
-    size === "custom" && paddingX && paddingY
+    size === 'custom' && paddingX && paddingY
       ? {
           paddingLeft: `${paddingX}px`,
           paddingRight: `${paddingX}px`,
@@ -32,10 +32,10 @@ const Button = ({
       : {};
 
   const buttonClasses = clsx(
-    "cursor-pointer flex items-center justify-center gap-[10px] transition-colors",
+    'cursor-pointer flex items-center justify-center gap-[10px] transition-colors',
     VARIANT_CLASSES[variant],
-    shape === "circle" ? SHAPE_CLASSES.circle : SIZE_CLASSES[size],
-    shape === "circle" ? "rounded-full" : "rounded-xl"
+    shape === 'circle' ? SHAPE_CLASSES.circle : SIZE_CLASSES[size],
+    shape === 'circle' ? 'rounded-full' : 'rounded-xl'
   );
 
   return (
