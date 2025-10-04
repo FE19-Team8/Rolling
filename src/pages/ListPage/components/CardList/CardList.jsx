@@ -22,7 +22,7 @@ const CardList = ({ cards }) => {
       {currentIndex > 0 && (
         <div className="absolute top-[100px] left-[-25px] z-10">
           <Button
-            variant="outlined"
+            variant="translucent"
             shape="circle"
             iconName="arrowLeft"
             onClick={handlePrev}
@@ -32,7 +32,7 @@ const CardList = ({ cards }) => {
       {currentIndex + 4 < cards.length && (
         <div className="absolute top-[100px] right-[-25px] z-10">
           <Button
-            variant="outlined"
+            variant="translucent"
             shape="circle"
             iconName="arrowRight"
             onClick={handleNext}

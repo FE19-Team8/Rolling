@@ -16,9 +16,17 @@ export const VARIANT_CLASSES = {
     'border border-purple-600 text-purple-700 bg-white hover:bg-purple-100 active:bg-purple-100 focus:bg-white focus:border-purple-800 disabled:bg-gray-300 disabled:text-white disabled:cursor-not-allowed disabled:border disabled:border-gray-300',
 
   outlined:
-    'border border-gray-300 bg-white text-gray-9 00 hover:bg-gray-100 active:bg-gray-100 active:border-gray-300 focus:bg-white focus:border-gray-900 disabled:bg-gray-300 disabled:text-white disabled:cursor-not-allowed',
+    'border border-gray-300 bg-white text-gray-900 hover:bg-gray-100 active:bg-gray-100 active:border-gray-300 focus:bg-white focus:border-gray-900 disabled:bg-gray-300 disabled:text-white disabled:cursor-not-allowed',
 
   gray: 'bg-gray-500 text-white hover:bg-gray-600 active:bg-gray-700 focus:bg-gray-700 focus:border-gray-800 cursor-pointer disabled:bg-gray-300 disabled:text-white disabled:cursor-not-allowed',
+
+  translucent: `
+    border border-gray250 bg-white text-gray-900 opacity-90
+    hover:opacity-100 hover:border-gray300 hover:bg-gray300
+    active:opacity-100 active:border-gray300 active:bg-gray200
+    disabled: bg-gray-300 disabled:text-white disabled:cursor-not-allowed
+    transition-all duration-300 ease-in-out
+  `,
 };
 
 export const SIZE_CLASSES = {
@@ -29,7 +37,7 @@ export const SIZE_CLASSES = {
 };
 
 export const SHAPE_CLASSES = {
-  circle: 'w-14 h-14',
+  circle: 'w-10 h-10',
 };
 
 export const ICONS = {
