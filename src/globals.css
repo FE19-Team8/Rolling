@@ -1,47 +1,48 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /*=== COLORS === */
 @theme {
-	--color-purple100: #F8F0FF;
-	--color-purple200: #ECD9FF;
-	--color-purple300: #DCB9FF;
-	--color-purple400: #C894FD;
-	--color-purple500: #AB57FF;
-	--color-purple600: #9935FF;
-	--color-purple700: #861DEE;
-	--color-purple800: #6E0AD1;
-	--color-purple900: #5603A7;
-	
-	--color-beige100: #FFF0D6;
-	--color-beige200: #FFE2AD;
-	--color-beige300: #FFC583;
-	--color-beige400: #FFAE65;
-	--color-beige500: #FF8832;
-	
-	--color-blue100: #E2F5FF;
-	--color-blue200: #B1E4FF;
-	--color-blue300: #7CD2FF;
-	--color-blue400: #34B9FF;
-	--color-blue500: #00A2FE;
-	
-	--color-green100: #E4FBDC;
-	--color-green200: #D0F5C3;
-	--color-green300: #9BE282;
-	--color-green400: #60CF37;
-	--color-green500: #2BA600;
-	
-	--color-gray100: #F6F6F6;
-	--color-gray200: #EEEEEE;
-	--color-gray300: #CCCCCC;
-	--color-gray400: #999999;
-	--color-gray500: #555555;
-	--color-gray600: #4A4A4A;
-	--color-gray700: #3A3A3A;
-	--color-gray800: #2B2B2B;
-	--color-gray900: #181818;
-	
-	--color-error: #DC3A3A;
-	--color-surface: #DC3A3A;
+  --color-purple100: #f8f0ff;
+  --color-purple200: #ecd9ff;
+  --color-purple300: #dcb9ff;
+  --color-purple400: #c894fd;
+  --color-purple500: #ab57ff;
+  --color-purple600: #9935ff;
+  --color-purple700: #861dee;
+  --color-purple800: #6e0ad1;
+  --color-purple900: #5603a7;
+
+  --color-beige100: #fff0d6;
+  --color-beige200: #ffe2ad;
+  --color-beige300: #ffc583;
+  --color-beige400: #ffae65;
+  --color-beige500: #ff8832;
+
+  --color-blue100: #e2f5ff;
+  --color-blue200: #b1e4ff;
+  --color-blue300: #7cd2ff;
+  --color-blue400: #34b9ff;
+  --color-blue500: #00a2fe;
+
+  --color-green100: #e4fbdc;
+  --color-green200: #d0f5c3;
+  --color-green300: #9be282;
+  --color-green400: #60cf37;
+  --color-green500: #2ba600;
+
+  --color-gray100: #f6f6f6;
+  --color-gray200: #eeeeee;
+  --color-gray250: #dadcdf;
+  --color-gray300: #cccccc;
+  --color-gray400: #999999;
+  --color-gray500: #555555;
+  --color-gray600: #4a4a4a;
+  --color-gray700: #3a3a3a;
+  --color-gray800: #2b2b2b;
+  --color-gray900: #181818;
+
+  --color-error: #dc3a3a;
+  --color-surface: #dc3a3a;
 }
 
 /*=== FONTS === */
@@ -77,7 +78,7 @@
 
 @font-face {
   font-family: 'Pinkfong';
-  src: url('./assets/fonts/Pinkfong.otf')format('opentype');
+  src: url('./assets/fonts/Pinkfong.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -99,10 +100,9 @@
 
 /* 말줄임표 (2줄) */
 .line-clamp-2 {
-  display: -webkit-box;          /* 멀티라인 블록 */
-  -webkit-line-clamp: 2;         /* 최대 2줄 */
-  -webkit-box-orient: vertical;  /* 박스 방향 설정 */
-  overflow: hidden;              /* 넘치는 텍스트 숨김 */
-  text-overflow: ellipsis;       /* 말줄임 표시 */
+  display: -webkit-box; /* 멀티라인 블록 */
+  -webkit-line-clamp: 2; /* 최대 2줄 */
+  -webkit-box-orient: vertical; /* 박스 방향 설정 */
+  overflow: hidden; /* 넘치는 텍스트 숨김 */
+  text-overflow: ellipsis; /* 말줄임 표시 */
 }
-
