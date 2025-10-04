@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 
-import api from "./api";
-import { throwIfMissing } from "../utils/validators";
+import api from "@/api/api";
+import { throwIfMissing } from "@/utils/validators";
 
 export const reactToPaper = (
   recipientId = throwIfMissing("recipinet_id"),

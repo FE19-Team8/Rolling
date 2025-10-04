@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import RollingPaperCard from '../RollingPaperCard/RollingPaperCard';
-import Button from '../../../../components/Button/Button';
+import Button from '@/components/Button/Button';
+import RollingPaperCard from '@/pages/ListPage/components/RollingPaperCard/RollingPaperCard';
 
 const CardList = ({ cards }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

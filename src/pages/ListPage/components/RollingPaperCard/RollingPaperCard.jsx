@@ -1,6 +1,6 @@
-import ProfileStack from '../../../../components/ProfileStack/ProfileStack';
-import EmojiBadge from '../../../../EmojiBadge/EmojiBadge';
-import Divider from '../../../../components/Divider/Divder';
+import ProfileStack from '@/components/ProfileStack/ProfileStack';
+import EmojiBadge from '@/EmojiBadge/EmojiBadge';
+import Divder from '@/components/Divider/Divder';
 
 // 서버 연결 후 지움
 const DEFAULT = {

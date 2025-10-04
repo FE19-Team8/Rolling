@@ -1,5 +1,5 @@
-import api from './api';
-import { throwIfMissing } from '../utils/validators';
+import api from '@/api/api';
+import { throwIfMissing } from '@/utils/validators';
 
 const END_POINT = '/19-8/recipients/';
 
