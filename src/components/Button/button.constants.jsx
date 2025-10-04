@@ -1,12 +1,12 @@
-import AddIcon from '../../assets/icons/ic_add.svg?react';
-import ArrowDownIcon from '../../assets/icons/ic_arrow_down.svg?react';
-import ArrowLeftIcon from '../../assets/icons/ic_arrow_left.svg?react';
-import ArrowRightIcon from '../../assets/icons/ic_arrow_right.svg?react';
-import CheckIcon from '../../assets/icons/ic_check.svg?react';
-import DeleteIcon from '../../assets/icons/ic_delete.svg?react';
-import EditIcon from '../../assets/icons/ic_edit.svg?react';
-import PlusIcon from '../../assets/icons/ic_plus.svg?react';
-import ShareIcon from '../../assets/icons/ic_share.svg?react';
+import AddIcon from '@/assets/icons/ic_add.svg?react';
+import ArrowDownIcon from '@/assets/icons/ic_arrow_down.svg?react';
+import ArrowLeftIcon from '@/assets/icons/ic_arrow_left.svg?react';
+import ArrowRightIcon from '@/assets/icons/ic_arrow_right.svg?react';
+import CheckIcon from '@/assets/icons/ic_check.svg?react';
+import DeleteIcon from '@/assets/icons/ic_delete.svg?react';
+import EditIcon from '@/assets/icons/ic_edit.svg?react';
+import PlusIcon from '@/assets/icons/ic_plus.svg?react';
+import ShareIcon from '@/assets/icons/ic_share.svg?react';
 
 export const VARIANT_CLASSES = {
   primary:

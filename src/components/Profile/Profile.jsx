@@ -1,4 +1,4 @@
-import DefaultProfileIcon from '../../assets/icons/ic_default_profile.svg';
+import DefaultProfileIcon from '@/assets/icons/ic_default_profile.svg';
 import clsx from 'clsx';
 
 const VARIANT_CLASSES = {
