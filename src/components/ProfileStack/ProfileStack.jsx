@@ -1,4 +1,4 @@
-import Profile from '@/Profile/Profile';
+import Profile from '@/components/Profile/Profile';
 import clsx from 'clsx';
 
 const ProfileStack = ({ profiles = [], remainingCount, onClick }) => {
@@ -12,7 +12,7 @@ const ProfileStack = ({ profiles = [], remainingCount, onClick }) => {
           className={clsx(
             'relative',
             index > 0 && '-ml-2.5', // -10px
-            `z-[${index + 1}]`,
+            `z-[${index + 1}]`
           )}
         >
           <Profile
@@ -29,7 +29,7 @@ const ProfileStack = ({ profiles = [], remainingCount, onClick }) => {
         <div
           className={clsx(
             'relative flex items-center justify-center bg-white rounded-full border border-gray-300 text-gray-600 font-medium min-w-7 h-7 px-1 text-xs',
-            '-ml-2.5 z-[4]',
+            '-ml-2.5 z-[4]'
           )}
         >
           {remainingCount > 99 ? '99+' : `+${remainingCount}`}
