@@ -27,6 +27,11 @@ export const VARIANT_CLASSES = {
     disabled: bg-gray-300 disabled:text-white disabled:cursor-not-allowed
     transition-all duration-300 ease-in-out
   `,
+
+  noLine: `
+    bg-white hover:bg-gray-200 focus:bg-gray-300 border-none
+
+  `,
 };
 
 export const SIZE_CLASSES = {
