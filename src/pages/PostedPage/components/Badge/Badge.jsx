@@ -10,7 +10,7 @@ const Badge = ({ relationship }) => {
   };
   const classes = clsx(
     baseStyle,
-    styles[relationship] || 'bg-gray200 text-gray800'
+    styles[relationship] || 'bg-gray200 text-gray800',
   );
 
   return <span className={classes}>{relationship}</span>;
