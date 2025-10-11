@@ -34,7 +34,7 @@ const Profile = ({
       [VARIANT_CLASSES.bordered]: bordered && !selected,
       'cursor-pointer hover:opacity-80': onClick,
       'bg-gray-300 flex items-center justify-center ': isDefault,
-    }
+    },
   );
 
   return (
