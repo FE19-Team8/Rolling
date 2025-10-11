@@ -4,8 +4,10 @@ import StarterKit from '@tiptap/starter-kit';
 import TextAlign from '@tiptap/extension-text-align';
 import Color from '@tiptap/extension-color';
 import { TextStyle } from '@tiptap/extension-text-style';
+import OrderedList from '@tiptap/extension-ordered-list';
+import BulletList from '@tiptap/extension-bullet-list';
 import Editor from './Editor';
-import Toolbar from './Toolbar';
+import Toolbar from './Toolbar/Toolbar';
 
 function RichTextEditor() {
   const editor = useEditor({

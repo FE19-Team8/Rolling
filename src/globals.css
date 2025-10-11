@@ -113,3 +113,12 @@
 .ProseMirror:focus-visible {
   outline: none !important;
 }
+.tiptap ul {
+  list-style-type: disc; /* 점 활성화 */
+  padding-left: 1.5rem; 
+}
+
+.tiptap ol {
+  list-style-type: decimal; /* 숫자 활성화 */
+  padding-left: 1.5rem; 
+}
