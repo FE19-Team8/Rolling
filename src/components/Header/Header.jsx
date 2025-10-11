@@ -19,7 +19,7 @@ function Header() {
   };
 
   return (
-    <div className="sticky top-0 z-50 w-full py-3 bg-white border-b border-gray200">
+    <div className="sticky top-0 z-50 w-full h-[64px] py-3 bg-white border-b border-gray200 ">
       <div className="flex justify-between items-center w-full mx-auto px-6 max-w-[1248px]">
         <div
           className="flex items-center gap-2 cursor-pointer transition-transform duration-200 ease-in-out select-none"
