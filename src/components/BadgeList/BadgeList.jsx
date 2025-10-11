@@ -1,4 +1,4 @@
-import EmojiBadge from '@/EmojiBadge/EmojiBadge';
+import EmojiBadge from '@/components/EmojiBadge/EmojiBadge';
 import { useMemo, useState } from 'react';
 
 //예시 뱃지리스트 리스트를 사용하시는 페이지에서 쓰세요

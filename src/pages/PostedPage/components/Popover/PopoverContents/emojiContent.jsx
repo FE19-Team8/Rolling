@@ -1,4 +1,4 @@
-import EmojiBadge from '@/EmojiBadge/EmojiBadge';
+import EmojiBadge from '@/components/EmojiBadge/EmojiBadge';
 import { PopoverContent } from './PopoverContent';
 
 // 데이터 연결 후 삭제 예정
