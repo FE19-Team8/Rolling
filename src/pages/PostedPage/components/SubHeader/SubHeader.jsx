@@ -44,7 +44,7 @@ const SubHeader = ({
   reactions = DEFAULT.REACTION,
 }) => {
   return (
-    <div className="flex justify-center border border-gray200 w-full py-[13px]">
+    <div className="flex justify-center border-b border-gray200 w-full py-[13px] bg-white">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full max-w-[1200px] md:px-6 lg:px-0">
         {/* left */}
         <div className="mb-3 ml-5 md:mb-0 md:ml-0">

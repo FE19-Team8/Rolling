@@ -1,5 +1,5 @@
 import Badge from '../Badge/Badge';
-import Divider from '@/components/Divider/Divder';
+import Divider from '@/components/Divider/Divider';
 import Profile from '@/components/Profile/Profile';
 
 const EX = {
@@ -23,7 +23,7 @@ const MessageCard = ({
   const date = createdAt.slice(0, 10).replace(/-/g, '.');
 
   return (
-    <div className="flex flex-col justify-between p-[24px] ph-[28px] w-[384px] h-[280px] rounded-[16px] shadow-[0_2px_12px_0_#00000014]">
+    <div className="flex flex-col justify-between p-[24px] ph-[28px] h-[280px] rounded-[16px] shadow-[0_2px_12px_0_#00000014]">
       {/* SENDER */}
       <div>
         {/* HEAD */}
