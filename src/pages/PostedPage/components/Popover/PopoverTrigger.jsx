@@ -27,6 +27,16 @@ export const PopoverTrigger = ({ type }) => {
           iconName="share"
         />
       )}
+      {type === 'emojiPicker' && (
+        <Button
+          onClick={toggle}
+          size="custom"
+          paddingX={16}
+          paddingY={6}
+          variant="outlined"
+          iconName="add"
+        />
+      )}
     </>
   );
 };
