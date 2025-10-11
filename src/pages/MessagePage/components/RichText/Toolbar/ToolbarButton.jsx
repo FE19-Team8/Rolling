@@ -7,7 +7,7 @@ function ToolbarButton({ title, onClick, isActive, content }) {
       title={title}
       onClick={onClick}
       className={clsx(
-        'w-[24px] h-[24px] flex items-center justify-center transition rounded hover:bg-gray-300',
+        'w-6 h-6 flex items-center justify-center transition rounded hover:bg-gray-300',
         isActive && 'text-purple-600',
       )}
     >

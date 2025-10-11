@@ -11,7 +11,7 @@ function Palette({ editor }) {
 
   const currentColor = editor
     ? editor.getAttributes('textStyle').color
-    : 'black';
+    : undefined;
 
   useEffect(() => {
     if (!editor) return;

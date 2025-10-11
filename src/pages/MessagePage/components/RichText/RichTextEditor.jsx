@@ -15,11 +15,11 @@ function RichTextEditor() {
       StarterKit,
       TextStyle,
       Color,
-      TextAlign.configure({ types: ['heading', 'paragraph'] }),
+      TextAlign.configure({ types: ['heading', 'paragraph', 'listItem'] }),
     ],
   });
   return (
-    <div>
+    <div className="w-[720px] h-[260px] border border-gray-300 rounded-[16px] overflow-hidden">
       <Toolbar editor={editor} />
       <Editor editor={editor} />
     </div>

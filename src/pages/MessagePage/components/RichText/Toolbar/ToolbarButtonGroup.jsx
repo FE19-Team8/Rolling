@@ -19,17 +19,8 @@ function ToolbarButtonGroup({ editor, buttons }) {
 
   if (!editor) return null;
 
-  const GroupWidth =
-    buttons.length === 3
-      ? '[76px]'
-      : buttons.length === 2
-        ? '[50px]'
-        : '[24px]';
-
   return (
-    <div
-      className={`flex items-center w-${GroupWidth} h-[24px] justify-between`}
-    >
+    <div className={`flex items-center gap-1 h-6 justify-between`}>
       {buttons.map(({ title, command, isActiveCheck, content }) => (
         <ToolbarButton
           key={title}
