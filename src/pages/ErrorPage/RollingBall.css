@@ -1,0 +1,61 @@
+/* 🔮 큰 보라색 공 */
+.rolling-ball {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle at 30% 30%, #a855f7, #6b21a8);
+  border-radius: 50%;
+  animation: rollAcross 3s linear infinite;
+}
+
+/* 💨 부스러기(작은 원) */
+.dust {
+  position: absolute;
+  bottom: -20%;
+  width: 30px;
+  height: 30px;
+  background: #c084fc;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.dust-1 {
+  animation: dustTrail 3s linear infinite;
+  animation-delay: 0.1s;
+}
+
+.dust-2 {
+  animation: dustTrail 3s linear infinite;
+  animation-delay: 0.5s;
+}
+
+/* 🔁 큰 공 이동 + 회전 */
+@keyframes rollAcross {
+  0% {
+    transform: translate(-600%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(760px, -50%) rotate(720deg);
+  }
+}
+
+/* 🟣 부스러기 흘리기 */
+@keyframes dustTrail {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-10px) scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(-30px) scale(0.3);
+    opacity: 0;
+  }
+}

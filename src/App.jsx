@@ -21,7 +21,7 @@ function App() {
         <Route path="/post/:id" element={<PostedPage />} />
         <Route path="/post/:id/edit" element={<EditPage />} />
         <Route path="/post/:id/message" element={<MessagePage />} />
-        <Route path="/error" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
   );
