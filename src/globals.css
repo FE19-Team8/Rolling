@@ -107,3 +107,9 @@
   overflow: hidden; /* 넘치는 텍스트 숨김 */
   text-overflow: ellipsis; /* 말줄임 표시 */
 }
+
+/* 텍스트 에디터 관련*/
+/* contenteditable 내부 focus ring 완전 제거 */
+.ProseMirror:focus-visible {
+  outline: none !important;
+}
