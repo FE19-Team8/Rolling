@@ -35,7 +35,9 @@ export const PopoverTrigger = ({ type }) => {
           paddingY={6}
           variant="outlined"
           iconName="add"
-        />
+        >
+          <span className="hidden md:inline">추가</span>
+        </Button>
       )}
     </>
   );
