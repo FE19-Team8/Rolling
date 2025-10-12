@@ -1,44 +1,32 @@
-import ProfileStack from '@/components/ProfileStack/ProfileStack';
-import EmojiBadge from '@/components/EmojiBadge/EmojiBadge';
-import Divider from '@/components/Divider/Divider';
+import { useNavigate } from 'react-router-dom';
 
-// 서버 연결 후 지움
-const DEFAULT = {
-  NAME: 'Sowon',
-  PROFILES: [
-    { id: 1, src: '/images/default_profile.png' },
-    { id: 2, src: '/images/default_profile.png' },
-    { id: 3, src: '/images/default_profile.png' },
-  ],
-  MESSAGE_COUNT: 30,
-  TOP_REACTIONS: [
-    { emoji: '😀', count: 11 },
-    { emoji: '👍', count: 7 },
-    { emoji: '😍', count: 9 },
-  ],
-  BACKGROUND_COLOR: 'beige',
-  BACKGROUND_IMAGE_URL: null,
-};
+import ProfileStack from '@/components/ProfileStack/ProfileStack';
+import EmojiBadge from '@/EmojiBadge/EmojiBadge';
 
 export default function RollingPaperCard({
-  name = DEFAULT.NAME,
-  profiles = DEFAULT.PROFILES,
-  messageCount = DEFAULT.MESSAGE_COUNT,
-  topReactions = DEFAULT.TOP_REACTIONS,
-  backgroundColor = DEFAULT.BACKGROUND_COLOR,
-  backgroundImageURL = DEFAULT.BACKGROUND_IMAGE_URL,
+  id,
+  name,
+  profiles,
+  messageCount,
+  topReactions,
+  backgroundColor,
+  backgroundImageURL,
 }) {
-  const baseStyle = `flex flex-col justify-between w-[275px] h-[260px] px-6 py-5 rounded-[16px] shadow-[0_2px_12px_0_#00000014]`;
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/post/${id}/message`);
+  };
+
+  const baseStyle = `flex flex-col justify-between w-[275px] h-[260px] px-6 py-5 rounded-2xl shadow-sm hover:cursor-pointer`;
   const bodyStyle = 'flex flex-col gap-3';
   const nameStyle =
-    'font-bold text-2xl leading-9 pt-3 tracking-[-0.01em] line-clamp-2 ' +
+    'font-bold text-2xl leading-9 pt-3 line-clamp-2 ' +
     (backgroundImageURL ? 'text-white' : 'text-gray900');
   const accentedTextStyle =
-    'inline-flex text-md font-bold leading-[26px] tracking-[-0.01em] ' +
+    'inline-flex text-md font-bold leading-6' +
     (backgroundImageURL ? 'text-white' : 'text-gray700');
   const textStyle =
-    'text-md leading-[26px] tracking-[-0.01em] ' +
-    (backgroundImageURL ? 'text-white' : 'text-gray700');
+    'text-md leading-6' + (backgroundImageURL ? 'text-white' : 'text-gray700');
 
   // BACKGROUND SETTING
   const colorBackgroundMap = {
@@ -59,7 +47,11 @@ export default function RollingPaperCard({
   }
 
   return (
-    <div className={baseStyle} style={{ backgroundImage }}>
+    <div
+      className={baseStyle}
+      style={{ backgroundImage }}
+      onClick={handleClick}
+    >
       <div className={bodyStyle}>
         <h1 className={`${nameStyle}`}>To. {name}</h1>
         {profiles && (
@@ -86,18 +78,21 @@ export default function RollingPaperCard({
         )}
       </div>
       <footer>
-        <div>
-          {/*<Divider/>*/}
+        <div className="h-13">
           <hr
             role="separator"
             aria-orientation="horizontal"
             className="border-0 h-px bg-black/12 mb-[16px]"
           />
-        </div>
-        <div className="flex gap-2">
-          {topReactions.map((reaction, i) => (
-            <EmojiBadge key={i} emoji={reaction.emoji} count={reaction.count} />
-          ))}
+          <div className="flex gap-2">
+            {topReactions.map((reaction, i) => (
+              <EmojiBadge
+                key={i}
+                emoji={reaction.emoji}
+                count={reaction.count}
+              />
+            ))}
+          </div>
         </div>
       </footer>
     </div>
