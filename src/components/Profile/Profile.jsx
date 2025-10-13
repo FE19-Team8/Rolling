@@ -26,16 +26,12 @@ const Profile = ({
 }) => {
   const isDefault = !src;
 
-  const wrapperClasses = clsx(
-    SIZE_CLASSES[size],
-    'rounded-full transition-all',
-    {
-      [VARIANT_CLASSES.selected]: selected,
-      [VARIANT_CLASSES.bordered]: bordered && !selected,
-      'cursor-pointer hover:opacity-80': onClick,
-      'bg-gray-300 flex items-center justify-center ': isDefault,
-    },
-  );
+  const wrapperClasses = clsx(SIZE_CLASSES[size], 'rounded-full transition-all', {
+    [VARIANT_CLASSES.selected]: selected,
+    [VARIANT_CLASSES.bordered]: bordered && !selected,
+    'cursor-pointer hover:opacity-80': onClick,
+    'bg-gray-300 flex items-center justify-center ': isDefault,
+  });
 
   return (
     <div onClick={onClick} className={wrapperClasses}>
@@ -50,11 +46,7 @@ const Profile = ({
           })}
         />
       ) : (
-        <img
-          src={src}
-          alt={alt}
-          className="w-full h-full object-cover rounded-full"
-        />
+        <img src={src} alt={alt} className="h-full w-full rounded-full object-cover" />
       )}
     </div>
   );

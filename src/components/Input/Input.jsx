@@ -23,7 +23,7 @@ const Input = ({
     !error && !disabled && STATE_CLASSES.default,
     error && STATE_CLASSES.error,
     disabled && STATE_CLASSES.disabled,
-    className,
+    className
   );
 
   return (
@@ -37,9 +37,7 @@ const Input = ({
         className={inputClasses}
         {...props}
       />
-      {error && errorMessage && (
-        <p className="mt-2 text-error px-1 text-sm">{errorMessage}</p>
-      )}
+      {error && errorMessage && <p className="text-error mt-2 px-1 text-sm">{errorMessage}</p>}
     </div>
   );
 };

@@ -8,10 +8,7 @@ const Badge = ({ relationship }) => {
     친구: 'text-blue500 bg-blue100',
     동료: 'text-purple600 bg-purple100',
   };
-  const classes = clsx(
-    baseStyle,
-    styles[relationship] || 'bg-gray200 text-gray800',
-  );
+  const classes = clsx(baseStyle, styles[relationship] || 'bg-gray200 text-gray800');
 
   return <span className={classes}>{relationship}</span>;
 };

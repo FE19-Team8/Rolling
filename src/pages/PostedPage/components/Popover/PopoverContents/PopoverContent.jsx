@@ -6,7 +6,7 @@ export const PopoverContent = ({ children }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="absolute mt-2 right-0 rounded-lg border border-gray350 bg-white shadow-[0px_2px_12px_0px_#00000014]">
+    <div className="border-gray350 absolute right-0 mt-2 rounded-lg border bg-white shadow-[0px_2px_12px_0px_#00000014]">
       {children}
     </div>
   );

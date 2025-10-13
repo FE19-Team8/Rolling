@@ -3,7 +3,7 @@ import Profile from '@/components/Profile/Profile';
 
 function ProfileList({ items, onClick }) {
   return (
-    <ul className="flex w-full gap-2 h-[56px]">
+    <ul className="flex h-[56px] w-full gap-2">
       {items.map((item, idx) => {
         return (
           <li key={idx}>
