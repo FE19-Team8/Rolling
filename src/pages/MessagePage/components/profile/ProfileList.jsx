@@ -7,10 +7,10 @@ function ProfileList({ items, onClick }) {
   const { isMobile } = useResponsive();
 
   return (
-    <ul className={`flex h-[56px] ${isMobile ? 'w-[208px]' : 'w-full'} flex-wrap gap-2`}>
-      {items.map((item, idx) => {
+    <ul className={`flex h-[56px] ${isMobile ? 'w-[200px]' : 'w-full'} flex-wrap gap-2`}>
+      {items.map((item) => {
         return (
-          <li key={idx}>
+          <li key={item}>
             <Profile
               size={(isMobile && 'small') || 'medium'}
               src={item}

@@ -9,9 +9,7 @@ const ListPage = () => {
   const { recipients, loading, error, showSkeleton } = useRecipients();
 
   const isEmpty =
-    !loading &&
-    !recipients.popular?.results?.length &&
-    !recipients.recent?.results?.length;
+    !loading && !recipients.popular?.results?.length && !recipients.recent?.results?.length;
 
   // STYLES
   const sectionStyle = 'flex flex-col items-center gap-4 m-13 w-fit';
@@ -20,7 +18,7 @@ const ListPage = () => {
 
   if (loading && showSkeleton)
     return (
-      <div className="flex flex-col lg:items-center mb-[218px]">
+      <div className="mb-[218px] flex flex-col lg:items-center">
         <div className="mt-[50px] mb-[64px]">
           <section className={sectionStyle}>
             <h2 className={titleStyle}>인기 롤링 페이퍼🔥</h2>
@@ -41,7 +39,7 @@ const ListPage = () => {
             </div>
           </section>
         </div>
-        <div className="flex justify-center w-full">
+        <div className="flex w-full justify-center">
           <Skeleton width={275} height={60} />
         </div>
       </div>
@@ -51,7 +49,7 @@ const ListPage = () => {
     return (
       <div>
         <h1 className={titleStyle}>아직 등록된 롤링페이퍼가 없어요</h1>
-        <div className="flex justify-center items-center">
+        <div className="flex items-center justify-center">
           <Button size="medium" onClick={() => navigate('/post')}>
             내 공간 만들어보기
           </Button>
@@ -61,7 +59,7 @@ const ListPage = () => {
   if (!recipients?.results?.length)
     return (
       <div>
-        <div className="flex flex-col lg:items-center mb-[218px]">
+        <div className="mb-[218px] flex flex-col lg:items-center">
           <div className="mt-[50px] mb-[64px]">
             <section className={sectionStyle}>
               <h2 className={titleStyle}>인기 롤링 페이퍼🔥</h2>
@@ -77,7 +75,7 @@ const ListPage = () => {
             </section>
           </div>
           {/* onClick={() => navigate('/PostedPage')} */}
-          <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center">
             <Button size="medium" onClick={() => navigate('/post')}>
               나도 만들어보기
             </Button>

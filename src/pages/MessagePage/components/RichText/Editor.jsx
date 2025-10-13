@@ -7,10 +7,10 @@ function Editor({ editor }) {
   };
 
   return (
-    <div className="w-full h-[210px] p-4" onClick={handleWrapperClick}>
+    <div className="h-[210px] w-full p-4" onClick={handleWrapperClick}>
       <EditorContent
         editor={editor}
-        className="h-[178px] w-[688px] leading-relaxed text-gray-900 bg-white whitespace-pre-wrap break-words outline-none"
+        className="h-[178px] w-[688px] bg-white leading-relaxed break-words whitespace-pre-wrap text-gray-900 outline-none"
       />
     </div>
   );

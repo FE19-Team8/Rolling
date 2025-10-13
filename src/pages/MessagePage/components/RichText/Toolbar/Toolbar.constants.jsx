@@ -99,7 +99,5 @@ export const COLOR_BUTTONS = TAILWIND_COLOR_PALETTE.map((code) => ({
   title: code,
   command: (editor) => editor.chain().focus().setColor(code).run(),
   isActiveCheck: { textColor: code },
-  content: (
-    <span className="w-5 h-5 rounded-sm" style={{ backgroundColor: code }} />
-  ),
+  content: <span className="h-5 w-5 rounded-sm" style={{ backgroundColor: code }} />,
 }));

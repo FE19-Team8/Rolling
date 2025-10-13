@@ -8,7 +8,7 @@ const BASE_BUTTON_STYLE =
 const BUTTON_DESIGN = 'border border-gray-300 rounded-lg text-gray-800';
 const BUTTON_EFFECT = 'ring-2 ring-gray-500 outline-none';
 
-function DropDown({ items }) {
+function DropDown({ items, onSelect }) {
   const [selected, setSelected] = useState(items[0]);
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
@@ -25,6 +25,7 @@ function DropDown({ items }) {
 
   const handleSelect = (item) => {
     setSelected(item);
+    onSelect(item);
     setIsOpen(false);
   };
 
@@ -53,6 +54,7 @@ function DropDown({ items }) {
               role="option"
               aria-selected={item === selected}
               className={clsx(
+                'bg-white',
                 BASE_BUTTON_STYLE,
                 selected === item && 'bg-gray-200',
                 'hover:bg-gray-100'
