@@ -6,8 +6,19 @@ import Profile from '@/components/Profile/Profile';
 
 import ModalWrapper from '../Modal/ModalWrapper';
 import MessageContent from '../Modal/MessageContent';
+import Button from '@/components/Button/Button';
 
-const MessageCard = ({ sender, profileImageURL, relationship, content, font, createdAt }) => {
+const MessageCard = ({
+  sender,
+  messageId,
+  profileImageURL,
+  relationship,
+  content,
+  font,
+  createdAt,
+  deletable = false,
+  onDelete,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const date = createdAt.slice(0, 10).replace(/-/g, '.');
 
@@ -26,15 +37,32 @@ const MessageCard = ({ sender, profileImageURL, relationship, content, font, cre
         {/* SENDER */}
         <div>
           {/* HEAD */}
-          <div className="mb-[15px] flex gap-[14px]">
-            <Profile src={profileImageURL} bordered />
-            <div>
-              <span className="flex gap-[6px]">
-                <span className="text-[20px] leading-6">From. </span>
-                <span className="text-[20px] leading-6 font-bold">{sender}</span>
-              </span>
-              <Badge relationship={relationship} />
+          <div className="mb-[15px] flex items-start">
+            <div className="flex flex-1 gap-[14px]">
+              <Profile src={profileImageURL} bordered />
+              <div>
+                <span className="flex gap-[6px]">
+                  <span className="text-[20px] leading-6">From. </span>
+                  <span className="text-[20px] leading-6 font-bold">{sender}</span>
+                </span>
+                <Badge relationship={relationship} />
+              </div>
             </div>
+            {/* DELETE */}
+            {deletable && (
+              <Button
+                variant="outlined"
+                size="custom"
+                paddingX={8}
+                paddingY={8}
+                iconName="delete"
+                className="ml-auto self-start rounded-[12px]"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  onDelete?.(messageId);
+                }}
+              />
+            )}
           </div>
           <Divider />
           {/* CONTENT */}

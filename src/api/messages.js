@@ -30,4 +30,5 @@ export const getMessageList = (recipientId = throwIfMissing('recipient_id'), opt
   });
 };
 
-export const deleteMessage = (id = throwIfMissing('id')) => api.delete(`${END_POINT}${id}/`);
+export const deleteMessage = (messageId = throwIfMissing('id')) =>
+  api.delete(`/19-8/messages/${messageId}/`);

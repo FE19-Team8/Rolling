@@ -54,5 +54,5 @@ export default function usePaginatedMessages(recipientId, initialLimit = 8, next
     }
   }, [recipientId, loadMore]);
 
-  return { messages, isLoading, hasMore, loadMore };
+  return { messages, setMessages, isLoading, hasMore, loadMore };
 }
