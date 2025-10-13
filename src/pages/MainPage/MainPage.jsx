@@ -7,7 +7,7 @@ import Button from '@/components/Button/Button';
 const MainPage = () => {
   const navigate = useNavigate();
   return (
-    <main className="flex flex-col items-center w-full max-w-300 mx-auto py-25">
+    <main className="flex flex-col items-center w-full max-w-300 mx-auto py-[60px]">
       <section className="flex justify-end items-start gap-[152px] w-[1200px] h-[324px] p-[60px_0_60px_60px] rounded-[16px] bg-surface mb-[30px]">
         <FeatureCard
           point="01"
