@@ -5,8 +5,8 @@ const ErrorPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col items-center justify-center pt-50 gap-10 relative overflow-hidden">
-      <div className="flex flex-col items-center gap-10 mb-20">
+    <div className="relative flex flex-col items-center justify-center gap-10 overflow-hidden pt-50">
+      <div className="mb-20 flex flex-col items-center gap-10">
         <h1 className="text-5xl font-bold">404 Not Found</h1>
         <span className="text-xl text-gray-700">
           존재하지 않는 주소를 입력했거나, 페이지가 삭제되었어요 😢

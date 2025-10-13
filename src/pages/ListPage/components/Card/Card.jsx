@@ -59,9 +59,7 @@ export default function RollingPaperCard({
     >
       <div className={bodyStyle}>
         <h1 className={`${nameStyle}`}>To. {name}</h1>
-        {profiles && (
-          <ProfileStack profiles={profiles} remainingCount={messageCount - 3} />
-        )}
+        {profiles && <ProfileStack profiles={profiles} remainingCount={messageCount - 3} />}
         {messageCount != 0 && (
           <div className="flex flex-col">
             <span>
@@ -87,7 +85,7 @@ export default function RollingPaperCard({
           <hr
             role="separator"
             aria-orientation="horizontal"
-            className="border-0 h-px bg-black/12 mb-[16px]"
+            className="mb-[16px] h-px border-0 bg-black/12"
           />
           <div className="flex gap-2">
             {topReactions.map((reaction, i) => (

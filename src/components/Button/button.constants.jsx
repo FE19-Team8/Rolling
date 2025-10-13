@@ -46,15 +46,15 @@ export const SHAPE_CLASSES = {
 };
 
 export const ICONS = {
-  add: <AddIcon className="w-6 h-6" />,
-  addSm: <AddIcon className="w-5 h-5" />,
-  arrowDown: <ArrowDownIcon className="w-6 h-6" />,
-  arrowLeft: <ArrowLeftIcon className="w-4 h-4" />,
-  arrowRight: <ArrowRightIcon className="w-4 h-4" />,
-  check: <CheckIcon className="w-6 h-6" />,
-  delete: <DeleteIcon className="w-6 h-6" />,
-  edit: <EditIcon className="w-4 h-4" />,
-  plus: <PlusIcon className="w-6 h-6" />,
-  share: <ShareIcon className="w-6 h-6" />,
-  shareSm: <ShareIcon className="w-5 h-5" />,
+  add: <AddIcon className="h-6 w-6" />,
+  addSm: <AddIcon className="h-5 w-5" />,
+  arrowDown: <ArrowDownIcon className="h-6 w-6" />,
+  arrowLeft: <ArrowLeftIcon className="h-4 w-4" />,
+  arrowRight: <ArrowRightIcon className="h-4 w-4" />,
+  check: <CheckIcon className="h-6 w-6" />,
+  delete: <DeleteIcon className="h-6 w-6" />,
+  edit: <EditIcon className="h-4 w-4" />,
+  plus: <PlusIcon className="h-6 w-6" />,
+  share: <ShareIcon className="h-6 w-6" />,
+  shareSm: <ShareIcon className="h-5 w-5" />,
 };
