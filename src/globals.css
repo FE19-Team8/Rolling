@@ -146,4 +146,16 @@
   margin-left: 1rem;
   display: inline-block !important; 
   width: auto;           
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #cccccc !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: none !important;
 }
