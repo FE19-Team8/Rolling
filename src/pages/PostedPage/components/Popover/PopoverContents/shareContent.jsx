@@ -1,8 +1,9 @@
 import { PopoverContent } from './PopoverContent';
+import KakaoShareButton from '../../KakaoShareButton/KakaoShareButton';
 
 export const ShareContent = () => {
   const buttonClasses = `
-    px-[16px] py-[12px] w-[138px] text-left
+    px-4 py-3 w-40 text-left
     hover:bg-gray100 hover:cursor-pointer
   `;
 
@@ -24,7 +25,7 @@ export const ShareContent = () => {
     <PopoverContent>
       <div className="flex flex-col mx-[1px] my-[10px]">
         <button className={buttonClasses} onClick={handleKakaoShare}>
-          카카오톡 공유
+          <KakaoShareButton/>
         </button>
         <button className={buttonClasses} onClick={handleUrlShare}>
           URL 공유
