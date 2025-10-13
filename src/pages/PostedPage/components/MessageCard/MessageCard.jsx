@@ -16,7 +16,7 @@ const MessageCard = ({ sender, profileImageURL, relationship, content, font, cre
   };
 
   const baseStyle = `
-    flex flex-col justify-between p-6 ph-[28px] h-[280px] rounded-[16px] shadow-[0_2px_12px_0_#00000014]
+    flex flex-col justify-between p-6 ph-7 h-70 bg-white rounded-2xl shadow-[0_2px_12px_0_#00000014]
     hover:cursor-pointer hover:shadow-lg
   `;
 
@@ -30,8 +30,8 @@ const MessageCard = ({ sender, profileImageURL, relationship, content, font, cre
             <Profile src={profileImageURL} bordered />
             <div>
               <span className="flex gap-[6px]">
-                <span className="text-[20px] leading-[24px]">From. </span>
-                <span className="text-[20px] leading-[24px] font-bold">{sender}</span>
+                <span className="text-[20px] leading-6">From. </span>
+                <span className="text-[20px] leading-6 font-bold">{sender}</span>
               </span>
               <Badge relationship={relationship} />
             </div>
@@ -40,7 +40,7 @@ const MessageCard = ({ sender, profileImageURL, relationship, content, font, cre
           {/* CONTENT */}
           <div className="py-[16px]">
             <span
-              className="text-gray600 line-clamp-4 text-[18px] leading-[28px] tracking-[-0.01em]"
+              className="text-gray600 line-clamp-4 text-lg leading-7 tracking-[-0.01em]"
               style={{ fontFamily: font }}
             >
               {content}
@@ -49,7 +49,7 @@ const MessageCard = ({ sender, profileImageURL, relationship, content, font, cre
         </div>
         {/* DATE */}
         <div>
-          <span className="text-gray400 text-[12px] tracking-[-0.005em]">{date}</span>
+          <span className="text-gray400 text-xm">{date}</span>
         </div>
       </div>
       {isOpen && (
