@@ -1,11 +1,11 @@
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Background from './components/Background/Background';
 import Layout from '../Layout';
 import SubHeader from './components/SubHeader/SubHeader';
 import MessageCardList from './components/MessageCardList/MessageCardList';
-
 const PostedPage = () => {
-  // const { id } = useParams();
+  const { id: recipientId } = useParams();
+
   return (
     <Layout>
       <Background color={'beige'} imageURL={'https://picsum.photos/id/1058/3840/2160'} />
@@ -16,7 +16,7 @@ const PostedPage = () => {
         </div>
         {/* 카드 리스트 영역 */}
         <div className="mx-auto mt-8 w-full max-w-[1200px] p-5 sm:mt-8 sm:p-6 xl:mt-28 xl:p-0">
-          <MessageCardList />
+          <MessageCardList recipientId={recipientId} />
         </div>
       </div>
     </Layout>
