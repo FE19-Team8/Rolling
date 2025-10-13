@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  useState,
-  useEffect,
-  useRef,
-} from 'react';
+import { useState, useEffect, useRef } from 'react';
 import DownArrowIcon from '@/assets/icons/ic_arrow_down.svg?react';
 import clsx from 'clsx';
 
@@ -40,22 +36,16 @@ function DropDown({ items }) {
         aria-expanded={isOpen}
         id="dropdownButton"
         onClick={() => setIsOpen(!isOpen)}
-        className={clsx(
-          BASE_BUTTON_STYLE,
-          BUTTON_DESIGN,
-          isOpen && BUTTON_EFFECT,
-        )}
+        className={clsx(BASE_BUTTON_STYLE, BUTTON_DESIGN, isOpen && BUTTON_EFFECT)}
       >
         <span>{selected}</span>
-        <DownArrowIcon
-          className={clsx('transition-transform', isOpen && 'rotate-180')}
-        />
+        <DownArrowIcon className={clsx('transition-transform', isOpen && 'rotate-180')} />
       </button>
       {isOpen && (
         <ul
           aria-labelledby="dropdownButton"
           role="listbox"
-          className="absolute left-0 mt-2 py-[10px] border border-gray-300 rounded-[8px] shadow-lg z-20"
+          className="absolute left-0 z-20 mt-2 rounded-[8px] border border-gray-300 py-[10px] shadow-lg"
         >
           {items.map((item, idx) => (
             <li
@@ -65,7 +55,7 @@ function DropDown({ items }) {
               className={clsx(
                 BASE_BUTTON_STYLE,
                 selected === item && 'bg-gray-200',
-                'hover:bg-gray-100',
+                'hover:bg-gray-100'
               )}
               onClick={() => handleSelect(item)}
             >
@@ -76,6 +66,6 @@ function DropDown({ items }) {
       )}
     </div>
   );
-};
+}
 
 export default DropDown;

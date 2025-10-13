@@ -31,7 +31,7 @@ function ProfileSelector() {
   }
 
   return (
-    <fieldset className="flex h-[142px] w-[717px] items-center gap-8 py-2">
+    <fieldset className={'flex h-[142px] w-[320px] items-center gap-8 py-2 md:w-[707px]'}>
       <Profile src={selected} size="large" />
       <div className="flex flex-col gap-4">
         <legend className="text-gray-500">프로필 이미지를 선택해주세요!</legend>
