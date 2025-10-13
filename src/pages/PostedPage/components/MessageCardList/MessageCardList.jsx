@@ -4,11 +4,18 @@ import MessageCard from '@/pages/PostedPage/components/MessageCard/MessageCard';
 import Skeleton from '@/components/Skeleton/Skeleton';
 import usePaginatedMessages from '@/pages/PostedPage/hooks/usePaginatedMessages';
 import useInfiniteObserver from '@/pages/PostedPage/hooks/useIntersectionObserver';
-const MessageCardList = ({ recipientId }) => {
+import useDeleteMessage from '@/pages/PostedPage/hooks/useDeleteMessage';
+const MessageCardList = ({ recipientId, isEditMode }) => {
   // 데이터 로딩 훅
-  const { messages, isLoading, hasMore, loadMore } = usePaginatedMessages(recipientId, 8, 3);
+  const { messages, setMessages, isLoading, hasMore, loadMore } = usePaginatedMessages(
+    recipientId,
+    8,
+    3
+  );
   // 스크롤 감지 훅
   const observerRef = useInfiniteObserver(loadMore, isLoading, hasMore);
+  // 메세지 삭제
+  const { handleDelete, isDeleting } = useDeleteMessage(setMessages);
 
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
@@ -24,13 +31,18 @@ const MessageCardList = ({ recipientId }) => {
       {messages.map((msg) => (
         <MessageCard
           key={msg.id}
+          messageId={msg.id}
           sender={msg.sender}
           profileImageURL={msg.profileImageURL}
           relationship={msg.relationship}
           content={msg.content}
           createdAt={msg.createdAt}
+          deletable={isEditMode}
+          onDelete={() => handleDelete(msg.id)}
         />
       ))}
+
+      {isDeleting && <p>삭제 중입니다...</p>}
 
       {/* 로딩  스켈레톤 */}
       {isLoading && (
