@@ -1,30 +1,27 @@
 import { Link } from 'react-router-dom';
 import Button from '@/components/Button/Button';
 import MessageCard from '@/pages/PostedPage/components/MessageCard/MessageCard';
-import { MOCK_MESSAGES } from '@/pages/PostedPage/components/MessageCardList/messages';
 import Skeleton from '@/components/Skeleton/Skeleton';
-import useInfiniteScrollMessages from '@/pages/PostedPage/hooks/useInfiniteScroll';
-
-const MessageCardList = () => {
-  const { displayedMessages, observerRef, isLoading } =
-    useInfiniteScrollMessages({
-      data: MOCK_MESSAGES,
-      initialCount: 5,
-      nextCount: 3,
-    });
+import usePaginatedMessages from '@/pages/PostedPage/hooks/usePaginatedMessages';
+import useInfiniteObserver from '@/pages/PostedPage/hooks/useIntersectionObserver';
+const MessageCardList = ({ recipientId }) => {
+  // 데이터 로딩 훅
+  const { messages, isLoading, hasMore, loadMore } = usePaginatedMessages(recipientId, 8, 3);
+  // 스크롤 감지 훅
+  const observerRef = useInfiniteObserver(loadMore, isLoading, hasMore);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
       {/* 첫 번째 메세지 카드 고정*/}
       <Link
         to="/post"
         aria-label="새 메시지 작성 페이지로 이동"
-        className="flex justify-center items-center h-[280px] rounded-[16px] bg-white shadow-[0_2px_12px_0_rgba(0,0,0,0.08)]"
+        className="flex h-[280px] items-center justify-center rounded-[16px] bg-white shadow-[0_2px_12px_0_rgba(0,0,0,0.08)]"
       >
         <Button shape="circle" iconName="plus" variant="gray" />
       </Link>
       {/* 카드 리스트 */}
-      {displayedMessages.map((msg) => (
+      {messages.map((msg) => (
         <MessageCard
           key={msg.id}
           sender={msg.sender}
@@ -35,23 +32,17 @@ const MessageCardList = () => {
         />
       ))}
 
-      {/* 감시용 div (맨 아래) */}
-      <div ref={observerRef} className="h-[1px] col-span-full bg-transparent" />
-
       {/* 로딩  스켈레톤 */}
       {isLoading && (
         <>
           {Array.from({ length: 3 }).map((_z, i) => (
-            <Skeleton
-              key={i}
-              variant="base"
-              shape="rect"
-              width="100%"
-              height="280px"
-            />
+            <Skeleton key={i} variant="base" shape="rect" width="100%" height="280px" />
           ))}
         </>
       )}
+
+      {/* 감시용 div (맨 아래) */}
+      <div ref={observerRef} className="col-span-full h-[1px] bg-transparent" />
     </div>
   );
 };
