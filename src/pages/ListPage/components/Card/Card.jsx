@@ -3,6 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import ProfileStack from '@/components/ProfileStack/ProfileStack';
 import EmojiBadge from '@/components/EmojiBadge/EmojiBadge';
 
+import bgBeige from '@/assets/images/card_bg/bg_beige.png';
+import bgPurple from '@/assets/images/card_bg/bg_purple.png';
+import bgBlue from '@/assets/images/card_bg/bg_blue.png';
+import bgGreen from '@/assets/images/card_bg/bg_green.png';
+
 export default function RollingPaperCard({
   id,
   name,
@@ -30,10 +35,10 @@ export default function RollingPaperCard({
 
   // BACKGROUND SETTING
   const colorBackgroundMap = {
-    beige: '/images/card_bg/bg_beige.png',
-    purple: '/images/card_bg/bg_purple.png',
-    blue: '/images/card_bg/bg_blue.png',
-    green: '/images/card_bg/bg_green.png',
+    beige: bgBeige,
+    purple: bgPurple,
+    blue: bgBlue,
+    green: bgGreen,
   };
   const backgroundImage = backgroundImageURL
     ? `url(${backgroundImageURL})`
