@@ -12,7 +12,7 @@ const ProfileStack = ({ profiles = [], remainingCount, onClick }) => {
           className={clsx(
             'relative',
             index > 0 && '-ml-2.5', // -10px
-            `z-[${index + 1}]`,
+            `z-[${index + 1}]`
           )}
         >
           <Profile
@@ -28,8 +28,8 @@ const ProfileStack = ({ profiles = [], remainingCount, onClick }) => {
       {remainingCount > 0 && (
         <div
           className={clsx(
-            'relative flex items-center justify-center bg-white rounded-full border border-gray-300 text-gray-600 font-medium min-w-7 h-7 px-1 text-xs',
-            '-ml-2.5 z-[4]',
+            'relative flex h-7 min-w-7 items-center justify-center rounded-full border border-gray-300 bg-white px-1 text-xs font-medium text-gray-600',
+            'z-[4] -ml-2.5'
           )}
         >
           {remainingCount > 99 ? '99+' : `+${remainingCount}`}

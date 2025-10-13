@@ -22,7 +22,7 @@ export const ShareContent = () => {
 
   return (
     <PopoverContent>
-      <div className="flex flex-col mx-[1px] my-[10px]">
+      <div className="mx-[1px] my-[10px] flex flex-col">
         <button className={buttonClasses} onClick={handleKakaoShare}>
           카카오톡 공유
         </button>

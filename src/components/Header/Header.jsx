@@ -19,20 +19,20 @@ function Header() {
   };
 
   return (
-    <div className="sticky top-0 z-50 w-full h-[64px] py-3 bg-white border-b border-gray200 ">
-      <div className="flex justify-between items-center w-full mx-auto px-6 max-w-[1248px]">
+    <div className="border-gray200 sticky top-0 z-50 h-[64px] w-full border-b bg-white py-3">
+      <div className="mx-auto flex w-full max-w-[1248px] items-center justify-between px-6">
         <div
-          className="flex items-center gap-2 cursor-pointer transition-transform duration-200 ease-in-out select-none"
+          className="flex cursor-pointer items-center gap-2 transition-transform duration-200 ease-in-out select-none"
           style={{ transform: logoHovered ? 'scale(1.05)' : 'scale(1)' }}
           onClick={handleLogoClick}
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
         >
-          <Logo className="w-7 h-7" />
-          <span className="text-[19.97px] font-bold ">Rolling</span>
+          <Logo className="h-7 w-7" />
+          <span className="text-[19.97px] font-bold">Rolling</span>
         </div>
 
-        <div className="flex items-center gap-4 min-h-10">
+        <div className="flex min-h-10 items-center gap-4">
           {!isPostPage && (
             <Button
               variant="outlined"
@@ -41,7 +41,7 @@ function Header() {
               paddingY={8}
               onClick={handleCreateClick}
             >
-              <span className="font-bold text-[16px]">롤링 페이퍼 만들기</span>
+              <span className="text-[16px] font-bold">롤링 페이퍼 만들기</span>
             </Button>
           )}
         </div>
