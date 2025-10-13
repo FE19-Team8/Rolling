@@ -7,14 +7,7 @@ import Profile from '@/components/Profile/Profile';
 import ModalWrapper from '../Modal/ModalWrapper';
 import MessageContent from '../Modal/MessageContent';
 
-const MessageCard = ({
-  sender,
-  profileImageURL,
-  relationship,
-  content,
-  font,
-  createdAt,
-}) => {
+const MessageCard = ({ sender, profileImageURL, relationship, content, font, createdAt }) => {
   const [isOpen, setIsOpen] = useState(false);
   const date = createdAt.slice(0, 10).replace(/-/g, '.');
 
@@ -28,20 +21,17 @@ const MessageCard = ({
   `;
 
   return (
-<<<<<<< HEAD
     <>
       <div className={baseStyle} onClick={() => setIsOpen(true)}>
         {/* SENDER */}
         <div>
           {/* HEAD */}
-          <div className="flex gap-[14px] mb-[15px]">
+          <div className="mb-[15px] flex gap-[14px]">
             <Profile src={profileImageURL} bordered />
             <div>
               <span className="flex gap-[6px]">
                 <span className="text-[20px] leading-[24px]">From. </span>
-                <span className="text-[20px] leading-[24px] font-bold">
-                  {sender}
-                </span>
+                <span className="text-[20px] leading-[24px] font-bold">{sender}</span>
               </span>
               <Badge relationship={relationship} />
             </div>
@@ -50,31 +40,16 @@ const MessageCard = ({
           {/* CONTENT */}
           <div className="py-[16px]">
             <span
-              className="text-gray600 text-[18px] leading-[28px] tracking-[-0.01em] line-clamp-4"
+              className="text-gray600 line-clamp-4 text-[18px] leading-[28px] tracking-[-0.01em]"
               style={{ fontFamily: font }}
             >
               {content}
-=======
-    <div className="ph-[28px] flex h-[280px] flex-col justify-between rounded-[16px] p-[24px] shadow-[0_2px_12px_0_#00000014]">
-      {/* SENDER */}
-      <div>
-        {/* HEAD */}
-        <div className="mb-[15px] flex gap-[14px]">
-          <Profile src={profileImageURL} bordered />
-          <div>
-            <span className="flex gap-[6px]">
-              <span className="text-[20px] leading-[24px]">From. </span>
-              <span className="text-[20px] leading-[24px] font-bold">{sender}</span>
->>>>>>> 4f8c98a (chore: 머지 컨플릭트 해결 prettier (#134))
             </span>
           </div>
         </div>
-<<<<<<< HEAD
         {/* DATE */}
         <div>
-          <span className="text-gray400 text-[12px] tracking-[-0.005em]">
-            {date}
-          </span>
+          <span className="text-gray400 text-[12px] tracking-[-0.005em]">{date}</span>
         </div>
       </div>
       {isOpen && (
@@ -91,24 +66,6 @@ const MessageCard = ({
         </ModalWrapper>
       )}
     </>
-=======
-        <Divider />
-        {/* CONTENT */}
-        <div className="py-[16px]">
-          <span
-            className="text-gray600 line-clamp-4 text-[18px] leading-[28px] tracking-[-0.01em]"
-            style={{ fontFamily: font }}
-          >
-            {content}
-          </span>
-        </div>
-      </div>
-      {/* DATE */}
-      <div>
-        <span className="text-gray400 text-[12px] tracking-[-0.005em]">{date}</span>
-      </div>
-    </div>
->>>>>>> 4f8c98a (chore: 머지 컨플릭트 해결 prettier (#134))
   );
 };
 
