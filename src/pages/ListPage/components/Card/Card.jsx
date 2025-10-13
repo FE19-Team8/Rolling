@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 import ProfileStack from '@/components/ProfileStack/ProfileStack';
-import EmojiBadge from '@/EmojiBadge/EmojiBadge';
+import EmojiBadge from '@/components/EmojiBadge/EmojiBadge';
 
 export default function RollingPaperCard({
   id,
