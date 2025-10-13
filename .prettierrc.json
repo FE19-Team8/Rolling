@@ -1,12 +1,11 @@
-// jsonc 파일이므로 주석 사용 가능, 필요시 주석 삭제 후 json 형식으로 변경
 {
-  "semi": true,                                 // 세미콜론 사용
-  "singleQuote": true,                          // 문자열에 작은 따옴표 사용
-  "tabWidth": 2,                                // 들여쓰기 시 2칸 사용
-  "useTabs": false,                             // 탭 대신 공백 사용
-  "trailingComma": "es5",                       // ES5 문법에 허용되는 마지막 쉼표만 추가
-  "printWidth": 100,                            // 한 줄 최대 100자, 넘으면 자동 줄바꿈
-  "bracketSpacing": true,                       // 객체 리터럴에서 중괄호 내 공백 사용
-  "arrowParens": "always",                      // 화살표 함수 매개변수에 항상 괄호 사용
-  "plugins": ["prettier-plugin-tailwindcss"]    // Tailwind CSS 클래스 자동 정렬 플러그인
+  "semi": true,                                 
+  "singleQuote": true,                         
+  "tabWidth": 2,                               
+  "useTabs": false,                            
+  "trailingComma": "es5",                      
+  "printWidth": 100,                           
+  "bracketSpacing": true,                      
+  "arrowParens": "always",                     
+  "plugins": ["prettier-plugin-tailwindcss"]   
 }
