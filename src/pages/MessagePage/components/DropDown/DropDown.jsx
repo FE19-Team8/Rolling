@@ -3,8 +3,6 @@ import {
   useState,
   useEffect,
   useRef,
-  forwardRef,
-  useImperativeHandle,
 } from 'react';
 import DownArrowIcon from '@/assets/icons/ic_arrow_down.svg?react';
 import clsx from 'clsx';
@@ -14,7 +12,7 @@ const BASE_BUTTON_STYLE =
 const BUTTON_DESIGN = 'border border-gray-300 rounded-lg text-gray-800';
 const BUTTON_EFFECT = 'ring-2 ring-gray-500 outline-none';
 
-const DropDown = forwardRef(({ items }, propRef) => {
+function DropDown({ items }) {
   const [selected, setSelected] = useState(items[0]);
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
@@ -28,8 +26,6 @@ const DropDown = forwardRef(({ items }, propRef) => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
-
-  useImperativeHandle(propRef, () => ({ getValue: () => selected }));
 
   const handleSelect = (item) => {
     setSelected(item);
@@ -80,6 +76,6 @@ const DropDown = forwardRef(({ items }, propRef) => {
       )}
     </div>
   );
-});
+};
 
 export default DropDown;
