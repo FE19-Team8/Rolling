@@ -107,3 +107,43 @@
   overflow: hidden; /* 넘치는 텍스트 숨김 */
   text-overflow: ellipsis; /* 말줄임 표시 */
 }
+
+/* 텍스트 에디터 관련*/
+/* contenteditable 내부 focus ring 완전 제거 */
+.ProseMirror:focus-visible {
+  outline: none !important;
+}
+.tiptap ul,
+.tiptap ol {
+  list-style: none;
+}
+
+.tiptap li {
+  position: relative;
+  padding-left: 1.5rem; 
+}
+
+.tiptap ul > li::before {
+  content: '•';
+  position: absolute;                   /* 여백 기준 왼쪽 */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tiptap ol {
+  counter-reset: item;
+}
+
+.tiptap ol > li::before {
+  counter-increment: item;
+  content: counter(item) '.';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+  .ProseMirror li p {
+  margin-left: 1rem;
+  display: inline-block !important; 
+  width: auto;           
+}
