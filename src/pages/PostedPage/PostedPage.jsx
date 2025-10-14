@@ -21,9 +21,13 @@ const PostedPage = () => {
   const { handleDeletePaper } = useDeletePaper();
   const { recipient } = useRecipientDetails(recipientId);
 
+  if (recipient == null) return;
+  const color = recipient.backgroundColor;
+  const imageURL = recipient.backgroundImageURL;
+
   return (
     <Layout>
-      <Background color={'beige'} imageURL={'https://picsum.photos/id/1058/3840/2160'} />
+      <Background color={color} imageURL={imageURL} />
       <div className="flex min-h-screen flex-col">
         {/* SubHeader 영역 */}
         <div className="sticky top-[64px] z-40 w-full">

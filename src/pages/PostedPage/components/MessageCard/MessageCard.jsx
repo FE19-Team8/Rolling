@@ -20,7 +20,6 @@ const MessageCard = ({
   deletable = false,
   onDelete,
 }) => {
-  console.log(font);
   const [isOpen, setIsOpen] = useState(false);
   const date = createdAt.slice(0, 10).replace(/-/g, '.');
   const safeHTML = DOMPurify.sanitize(content);
