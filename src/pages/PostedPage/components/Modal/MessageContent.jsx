@@ -16,7 +16,7 @@ const MessageContent = ({
   const date = createdAt.slice(0, 10).replace(/-/g, '.');
 
   const contentStyle = `
-    pr-4 my-4 w-130 h-60
+    pr-4 my-4 w-full h-60
     text-gray600 text-lg leading-7 tracking-[-0.01em]
     overflow-y-auto custom-scrollbar
   `;
