@@ -3,7 +3,7 @@ import { useState, useEffect, useReducer, useCallback } from 'react';
 
 import Input from '@/components/Input/Input';
 import Button from '@/components/Button/Button';
-import api from '@/api/api';
+import { createMessage } from '@/api/messages';
 
 import FormItem from './components/FormItem';
 import ProfileSelector from './components/profile/ProfileSelector';
@@ -78,8 +78,7 @@ const MessagePage = () => {
 
   const handlePosting = async () => {
     try {
-      const res = await api.post(id, state);
-      console.log(res);
+      await createMessage(id, state);
       navigate(`/post/${id}`);
     } catch (err) {
       console.log(err);
@@ -95,7 +94,7 @@ const MessagePage = () => {
             onBlur={(err) => {
               !err.target.value ? setIsBlank(true) : setIsBlank(false);
             }}
-            onChange={handleNameChange}
+            onChange={(event) => handleNameChange(event.target.value)}
             error={isBlank}
             errorMessage="값을 입력해 주세요"
           />
