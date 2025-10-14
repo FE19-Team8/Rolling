@@ -1,5 +1,5 @@
 export { Popover } from './Popover';
 export { PopoverTrigger } from './PopoverTrigger';
-export { ShareContent } from './PopoverContents/ShareContent';
-export { EmojiContent } from './PopoverContents/EmojiContent';
+export { ShareContent } from './PopoverContents/shareContent';
+export { EmojiContent } from './PopoverContents/emojiContent';
 export { EmojiPickerContent } from './PopoverContents/EmojiPickerContent';

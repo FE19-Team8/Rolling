@@ -1,13 +1,13 @@
-import {useEffect} from 'react';
-const { Kakao }=window;
+import { useEffect } from 'react';
+const { Kakao } = window;
 
 export default function KakaoShareButton() {
-  const url = ""; // 배포 주소
+  const url = ''; // 배포 주소
   const resultUrl = window.location.href; // 로컬 주
 
-  useEffect(()=> {
+  useEffect(() => {
     Kakao.cleanup();
-    Kakao.init('ec9362736eeb9743ce6ab9123147857e');  // js 키
+    Kakao.init('ec9362736eeb9743ce6ab9123147857e'); // js 키
     console.log(Kakao.isInitialized());
   }, []);
 
@@ -36,9 +36,7 @@ export default function KakaoShareButton() {
         },
       ],
     });
-  }
+  };
 
-  return (
-    <span>카카오톡 공유하기</span>
-  );
-};
+  return <span>카카오톡 공유하기</span>;
+}

@@ -1,7 +1,8 @@
 import React from 'react';
+import { useState, useReducer, useEffect } from 'react';
+
 import ToolbarButton from './ToolbarButton';
 import { COLOR_BUTTONS } from './Toolbar.constants';
-import { useState, useReducer, useEffect } from 'react';
 
 const forceUpdateReducer = (state) => state + 1;
 

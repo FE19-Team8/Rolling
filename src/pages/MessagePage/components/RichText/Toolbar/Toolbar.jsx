@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ToolbarButtonGroup from './ToolbarButtonGroup';
 import { TEXT_ALIGN_BUTTONS, TEXT_STYLE_BUTTONS, LIST_BUTTONS } from './Toolbar.constants';
 import Palette from './Palette';

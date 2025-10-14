@@ -43,7 +43,7 @@ export const ShareContent = () => {
     <PopoverContent>
       <div className="mx-[1px] my-[10px] flex flex-col">
         <button className={buttonClasses} onClick={handleKakaoShare}>
-          <KakaoShareButton/>
+          <KakaoShareButton />
         </button>
         <button className={buttonClasses} onClick={handleUrlShare}>
           URL 공유

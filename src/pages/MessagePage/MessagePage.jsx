@@ -1,12 +1,14 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import FormItem from './components/FormItem';
+import { useState, useEffect, useReducer, useCallback } from 'react';
+
 import Input from '@/components/Input/Input';
+import Button from '@/components/Button/Button';
+import api from '@/api/api';
+
+import FormItem from './components/FormItem';
 import ProfileSelector from './components/profile/ProfileSelector';
 import DropDown from './components/DropDown/DropDown';
 import RichTextEditor from './components/RichText/RichTextEditor';
-import Button from '@/components/Button/Button';
-import { useState, useEffect, useReducer, useCallback } from 'react';
-import api from '@/api/api';
 
 const RELATIONSHIP_DATA = ['지인', '친구', '가족', '동료'];
 const FONT_DATA = ['Noto Sans', 'Pretendard', '나눔명조', '나눔손글씨 손편지체'];

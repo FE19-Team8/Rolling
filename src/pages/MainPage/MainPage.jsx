@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+
 import FeatureCard from '@/pages/MainPage/components/FeatureCard';
 import featureImg01 from '@/assets/images/main/feature_01.png';
 import featureImg02 from '@/assets/images/main/feature_02.png';

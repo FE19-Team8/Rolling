@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-import Badge from '../Badge/Badge';
 import Divider from '@/components/Divider/Divider';
 import Profile from '@/components/Profile/Profile';
+import Button from '@/components/Button/Button';
 
+import Badge from '../Badge/Badge';
 import ModalWrapper from '../Modal/ModalWrapper';
 import MessageContent from '../Modal/MessageContent';
-import Button from '@/components/Button/Button';
 
 const MessageCard = ({
   sender,

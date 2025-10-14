@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BG_COLORS, TEXT } from './Constants';
+
 import useBackgroundImages from '@/pages/PostingPage/hooks/UseBackgroundImages';
 
+import { BG_COLORS, TEXT } from './Constants';
 import ToInput from './components/ToInput/ToInput';
 import SectionTitle from './components/SectionTitle/SectionTitle';
 import ToggleGroup from './components/Toggle/ToggleGroup';

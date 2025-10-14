@@ -1,8 +1,10 @@
-import { getProfileImages } from '@/api/images';
 import { useState, useEffect, useRef } from 'react';
-import ProfileList from './ProfileList';
+
+import { getProfileImages } from '@/api/images';
 import Profile from '@/components/Profile/Profile';
 import Skeleton from '@/components/Skeleton/Skeleton';
+
+import ProfileList from './ProfileList';
 
 function ProfileSelector({ onSelect }) {
   const [selected, setSelected] = useState(null);

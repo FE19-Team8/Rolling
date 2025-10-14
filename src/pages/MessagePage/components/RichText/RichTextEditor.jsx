@@ -3,9 +3,10 @@ import StarterKit from '@tiptap/starter-kit';
 import TextAlign from '@tiptap/extension-text-align';
 import Color from '@tiptap/extension-color';
 import { TextStyle } from '@tiptap/extension-text-style';
+import { useRef } from 'react';
+
 import Editor from './Editor';
 import Toolbar from './Toolbar/Toolbar';
-import { useRef } from 'react';
 
 const extensions = [
   StarterKit,

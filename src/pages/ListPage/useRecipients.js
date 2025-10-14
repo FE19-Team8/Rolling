@@ -1,5 +1,6 @@
-import api from '@/api/api';
 import { useState, useEffect } from 'react';
+
+import api from '@/api/api';
 
 export const useRecipients = () => {
   const [recipients, setRecipients] = useState({ popular: [], recent: [] });
