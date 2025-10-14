@@ -14,7 +14,8 @@ const ListPage = () => {
     !loading && !recipients.popular?.results?.length && !recipients.recent?.results?.length;
 
   // STYLES
-  const sectionStyle = 'flex flex-col items-center gap-4 m-13 w-fit';
+  const sectionStyle =
+    'flex flex-col items-center gap-4 mx-5 md:mx-6 my-13 overflow-hidden lg:overflow-visible';
   const titleStyle = 'font-bold text-2xl leading-9 tracking-[-0.01em] w-full';
   const ListStyle = 'relative w-full';
 
@@ -60,8 +61,8 @@ const ListPage = () => {
     );
   if (!recipients?.results?.length)
     return (
-      <div>
-        <div className="mb-[218px] flex flex-col lg:items-center">
+      <div style={{ height: 'calc(100vh - 90px)' }}>
+        <div className="flex h-full flex-col justify-between lg:items-center">
           <div className="mt-[50px] mb-[64px]">
             <section className={sectionStyle}>
               <h2 className={titleStyle}>인기 롤링 페이퍼🔥</h2>
@@ -77,8 +78,8 @@ const ListPage = () => {
             </section>
           </div>
           {/* onClick={() => navigate('/PostedPage')} */}
-          <div className="fixed bottom-0 w-full p-6 lg:bottom-[218px] lg:flex lg:w-70 lg:items-center lg:justify-center">
-            <Button size={error ? 'large' : 'medium'} onClick={() => navigate('/post')}>
+          <div className="flex min-w-[280px] p-6 lg:mb-30">
+            <Button size={'sm' ? 'large' : 'medium'} onClick={() => navigate('/post')}>
               나도 만들어보기
             </Button>
           </div>

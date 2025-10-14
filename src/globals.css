@@ -43,7 +43,7 @@
   --color-gray900: #181818;
 
   --color-error: #dc3a3a;
-  --color-surface: #F6F8FF;
+  --color-surface: #f6f8ff;
 }
 
 /*=== FONTS === */
@@ -120,12 +120,12 @@
 
 .tiptap li {
   position: relative;
-  padding-left: 1.5rem; 
+  padding-left: 1.5rem;
 }
 
 .tiptap ul > li::before {
   content: '•';
-  position: absolute;                   /* 여백 기준 왼쪽 */
+  position: absolute; /* 여백 기준 왼쪽 */
   top: 50%;
   transform: translateY(-50%);
 }
@@ -144,9 +144,9 @@
 
 .ProseMirror li p {
   margin-left: 1rem;
-  display: inline-block !important; 
-  width: auto;      
-}     
+  display: inline-block !important;
+  width: auto;
+}
 
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px !important;
@@ -160,4 +160,15 @@
 
 .custom-scrollbar::-webkit-scrollbar-track {
   background-color: none !important;
+}
+
+/* 스크롤은 가능하지만 스크롤바만 안 보이게 */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox 대응 */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE, Edge */
+  scrollbar-width: none; /* Firefox */
 }
