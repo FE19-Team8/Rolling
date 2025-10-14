@@ -4,7 +4,7 @@ export default function Card({ bgType, item, selected, onSelect }) {
   return (
     <button
       onClick={onSelect}
-      className="relative h-[168px] w-[168px] cursor-pointer overflow-hidden rounded-[16px]"
+      className="relative h-[168px] w-full cursor-pointer overflow-hidden rounded-[16px] md:w-[168px]"
     >
       <div
         className={`absolute inset-0 ${bgType === 'color' ? '' : 'bg-cover bg-center'}`}
