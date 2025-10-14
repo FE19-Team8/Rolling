@@ -1,6 +1,6 @@
 import EmojiPicker from 'emoji-picker-react';
 
-import { PopoverContent } from './PopoverContent';
+import { PopoverContent } from './PopoverContent.jsx';
 
 export const EmojiPickerContent = ({ onEmojiClick }) => {
   return (

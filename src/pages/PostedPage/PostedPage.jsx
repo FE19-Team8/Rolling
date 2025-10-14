@@ -2,11 +2,13 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 
 import Layout from '@/pages/Layout.jsx';
-import Background from '@/pages/PostedPage/components/Background/Background';
-import MessageCardList from '@/pages/PostedPage/components/MessageCardList/MessageCardList';
-import SubHeader from '@/pages/PostedPage/components/SubHeader/SubHeader';
-import useDeletePaper from '@/pages/PostedPage/hooks/useDeletePaper';
-import Button from '@/components/Button/Button';
+import Background from '@/pages/PostedPage/components/Background/Background.jsx';
+import MessageCardList from '@/pages/PostedPage/components/MessageCardList/MessageCardList.jsx';
+import SubHeader from '@/pages/PostedPage/components/SubHeader/SubHeader.jsx';
+import useDeletePaper from '@/pages/PostedPage/hooks/useDeletePaper.js';
+import Button from '@/components/Button/Button.jsx';
+
+import { useRecipientDetails } from './hooks/useRecipientDetails.js';
 
 const PostedPage = () => {
   const { id: recipientId } = useParams();
@@ -17,6 +19,7 @@ const PostedPage = () => {
   };
 
   const { handleDeletePaper } = useDeletePaper();
+  const { recipient } = useRecipientDetails(recipientId);
 
   return (
     <Layout>
@@ -25,6 +28,7 @@ const PostedPage = () => {
         {/* SubHeader 영역 */}
         <div className="sticky top-[64px] z-40 w-full">
           <SubHeader isEditMode={isEditMode} onToggleEdit={() => setIsEditMode(!isEditMode)} />
+          <SubHeader recipient={recipient} recipientId={recipientId} />
         </div>
 
         <div className="mx-auto mt-8 w-full max-w-[1200px] p-5 sm:mt-8 sm:p-6 xl:mt-28 xl:p-0">

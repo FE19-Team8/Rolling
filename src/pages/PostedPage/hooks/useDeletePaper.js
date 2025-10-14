@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import { deletePaper } from '@/api/papers';
 
 export default function useDeletePaper(setPapers = () => {}) {
