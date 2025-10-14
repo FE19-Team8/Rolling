@@ -38,6 +38,7 @@ const MessageCardList = ({ recipientId, isEditMode }) => {
           relationship={msg.relationship}
           content={msg.content}
           createdAt={msg.createdAt}
+          font={msg.font}
           deletable={isEditMode}
           onDelete={() => handleDelete(msg.id)}
         />
