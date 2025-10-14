@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BG_COLORS, TEXT } from './Constants';
-import useBackgroundImages from './hooks/useBackgroundImages';
+import useBackgroundImages from '@/pages/PostingPage/hooks/UseBackgroundImages';
 
 import ToInput from './components/ToInput/ToInput';
 import SectionTitle from './components/SectionTitle/SectionTitle';
@@ -42,7 +42,7 @@ const PostingPage = () => {
   const items = bgType === 'color' ? BG_COLORS : bgImages;
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center bg-white pb-[100px] pt-[80px]">
+    <div className="flex min-h-screen w-full flex-col items-center bg-white pt-[80px] pb-[100px]">
       {/* 받는 사람 입력 */}
       <ToInput
         label={TEXT.toLabel}

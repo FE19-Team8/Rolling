@@ -1,8 +1,9 @@
 import { useParams } from 'react-router-dom';
-import Background from './components/Background/Background';
-import Layout from '../Layout';
-import SubHeader from './components/SubHeader/SubHeader';
-import MessageCardList from './components/MessageCardList/MessageCardList';
+import Layout from '@/pages/Layout';
+import Background from '@/pages/PostedPage/components/Background/Background';
+import MessageCardList from '@/pages/PostedPage/components/MessageCardList/MessageCardList';
+import SubHeader from '@/pages/PostedPage/components/SubHeader/SubHeader';
+
 const PostedPage = () => {
   const { id: recipientId } = useParams();
 

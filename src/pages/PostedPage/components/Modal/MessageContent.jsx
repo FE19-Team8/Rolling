@@ -21,9 +21,9 @@ const MessageContent = ({
   `;
 
   return (
-    <div className="flex flex-col p-6 ph-7 h-54">
+    <div className="ph-7 flex h-54 flex-col p-6">
       {/* HEAD */}
-      <div className="flex justify-between items-center mb-4">
+      <div className="mb-4 flex items-center justify-between">
         <div className="flex gap-4">
           <Profile src={profileImageURL} bordered />
           <div>
@@ -34,10 +34,10 @@ const MessageContent = ({
             <Badge relationship={relationship} />
           </div>
         </div>
-        <span className="text-gray400 text-xs ">{date}</span>
+        <span className="text-gray400 text-xs">{date}</span>
       </div>
       {/* CONTENT */}
-      <div className=" py-4">
+      <div>
         <Divider />
         <div className={contentStyle} style={{ fontFamily: font }}>
           {content}
