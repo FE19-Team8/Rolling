@@ -1,3 +1,5 @@
+import DOMPurify from 'dompurify';
+
 import Profile from '@/components/Profile/Profile';
 import Divider from '@/components/Divider/Divider';
 import Button from '@/components/Button/Button';
@@ -14,6 +16,15 @@ const MessageContent = ({
   onClose,
 }) => {
   const date = createdAt.slice(0, 10).replace(/-/g, '.');
+  const safeHTML = DOMPurify.sanitize(content);
+
+  const fontMap = {
+    pretendard: 'Pretendard',
+    'Noto Sans': 'NotoSans',
+    나눔명조: 'NanumMyeongjo',
+    '나눔손글씨 손편지체': 'NanumLetter',
+    핑크퐁: 'Pinkfong',
+  };
 
   const contentStyle = `
     pr-4 my-4 w-full h-60
@@ -40,9 +51,11 @@ const MessageContent = ({
       {/* CONTENT */}
       <div>
         <Divider />
-        <div className={contentStyle} style={{ fontFamily: font }}>
-          {content}
-        </div>
+        <div
+          className={contentStyle}
+          style={{ fontFamily: fontMap[font] || 'Pretendard' }}
+          dangerouslySetInnerHTML={{ __html: safeHTML }}
+        />
       </div>
       {/* BOTTOM */}
       <div className="flex justify-center">

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import DOMPurify from 'dompurify';
 
 import Divider from '@/components/Divider/Divider';
 import Profile from '@/components/Profile/Profile';
@@ -19,8 +20,18 @@ const MessageCard = ({
   deletable = false,
   onDelete,
 }) => {
+  console.log(font);
   const [isOpen, setIsOpen] = useState(false);
   const date = createdAt.slice(0, 10).replace(/-/g, '.');
+  const safeHTML = DOMPurify.sanitize(content);
+
+  const fontMap = {
+    pretendard: 'Pretendard',
+    'Noto Sans': 'NotoSans',
+    나눔명조: 'NanumMyeongjo',
+    '나눔손글씨 손편지체': 'NanumLetter',
+    핑크퐁: 'Pinkfong',
+  };
 
   const onClose = () => {
     setIsOpen(false);
@@ -69,10 +80,9 @@ const MessageCard = ({
           <div className="py-[16px]">
             <span
               className="text-gray600 line-clamp-4 text-lg leading-7 tracking-[-0.01em]"
-              style={{ fontFamily: font }}
-            >
-              {content}
-            </span>
+              style={{ fontFamily: fontMap[font] || 'Pretendard' }}
+              dangerouslySetInnerHTML={{ __html: safeHTML }}
+            />
           </div>
         </div>
         {/* DATE */}
