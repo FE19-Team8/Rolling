@@ -3,6 +3,7 @@ import { useState, useEffect, useReducer, useCallback } from 'react';
 
 import Input from '@/components/Input/Input';
 import Button from '@/components/Button/Button';
+import CommonHead from '@/meta/CommonHead';
 import { createMessage } from '@/api/messages';
 
 import FormItem from './components/FormItem';
@@ -32,6 +33,12 @@ function formReducer(state, action) {
 
 const MessagePage = () => {
   const { id } = useParams();
+  const META_DATA = {
+    title: '롤링페이퍼 메시지 작성 | 마음을 담은 한마디를 전해보세요',
+    desc: '친구, 동료, 혹은 소중한 사람에게 마음을 전해보세요.',
+    image: 'https://rolling-xsll.vercel.app/og/og_message',
+    canonical: `https://rolling-xsll.vercel.app/post/${id}/message`,
+  };
   const navigate = useNavigate();
   const initialState = {
     team: 8,
@@ -86,36 +93,44 @@ const MessagePage = () => {
   };
 
   return (
-    <main className="min-h-screen">
-      <form className="mx-auto mt-[50px] mb-[25px] flex w-[320px] flex-1 flex-col gap-[50px] md:w-[720px]">
-        <FormItem title="From.">
-          <Input
-            placeholder="이름을 입력해주세요."
-            onBlur={(err) => {
-              !err.target.value ? setIsBlank(true) : setIsBlank(false);
-            }}
-            onChange={(event) => handleNameChange(event.target.value)}
-            error={isBlank}
-            errorMessage="값을 입력해 주세요"
-          />
-        </FormItem>
-        <FormItem title="프로필 이미지">
-          <ProfileSelector onSelect={handleProfileSelect} />
-        </FormItem>
-        <FormItem title="상대와의 관계">
-          <DropDown items={RELATIONSHIP_DATA} onSelect={handleRelationshipSelect} />
-        </FormItem>
-        <FormItem title="내용을 입력해 주세요">
-          <RichTextEditor onChange={handleContentChange} />
-        </FormItem>
-        <FormItem title="폰트 선택">
-          <DropDown items={FONT_DATA} onSelect={handleFontSelect} />
-        </FormItem>
-        <Button size="large" disabled={!isValid} onClick={handlePosting}>
-          생성하기
-        </Button>
-      </form>
-    </main>
+    <>
+      <CommonHead
+        title={META_DATA.title}
+        description={META_DATA.desc}
+        canonical={META_DATA.canonical}
+        image={META_DATA.image}
+      />
+      <main className="min-h-screen">
+        <form className="mx-auto mt-[50px] mb-[25px] flex w-[320px] flex-1 flex-col gap-[50px] md:w-[720px]">
+          <FormItem title="From.">
+            <Input
+              placeholder="이름을 입력해주세요."
+              onBlur={(err) => {
+                !err.target.value ? setIsBlank(true) : setIsBlank(false);
+              }}
+              onChange={(event) => handleNameChange(event.target.value)}
+              error={isBlank}
+              errorMessage="값을 입력해 주세요"
+            />
+          </FormItem>
+          <FormItem title="프로필 이미지">
+            <ProfileSelector onSelect={handleProfileSelect} />
+          </FormItem>
+          <FormItem title="상대와의 관계">
+            <DropDown items={RELATIONSHIP_DATA} onSelect={handleRelationshipSelect} />
+          </FormItem>
+          <FormItem title="내용을 입력해 주세요">
+            <RichTextEditor onChange={handleContentChange} />
+          </FormItem>
+          <FormItem title="폰트 선택">
+            <DropDown items={FONT_DATA} onSelect={handleFontSelect} />
+          </FormItem>
+          <Button size="large" disabled={!isValid} onClick={handlePosting}>
+            생성하기
+          </Button>
+        </form>
+      </main>
+    </>
   );
 };
 
