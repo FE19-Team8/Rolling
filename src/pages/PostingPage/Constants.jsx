@@ -1,5 +1,12 @@
 export const BG_COLORS = ['#FFE2AD', '#ECD9FF', '#B1E4FF', '#D0F5C3'];
 
+export const COLOR_TOKEN_MAP = {
+  '#FFE2AD': 'beige',
+  '#ECD9FF': 'purple',
+  '#B1E4FF': 'blue',
+  '#D0F5C3': 'green',
+};
+
 export const TEXT = {
   toLabel: 'To.',
   toPlaceholder: '받는 사람 이름을 입력해 주세요',

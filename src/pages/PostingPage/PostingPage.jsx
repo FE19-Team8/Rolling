@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BG_COLORS, TEXT } from './Constants';
+import { BG_COLORS, COLOR_TOKEN_MAP, TEXT } from './Constants';
 import useBackgroundImages from '@/pages/PostingPage/hooks/UseBackgroundImages';
+import { createPaper } from '@/api/papers';
+import { useMemo } from 'react';
 
 import ToInput from './components/ToInput/ToInput';
 import SectionTitle from './components/SectionTitle/SectionTitle';
@@ -32,17 +34,38 @@ const PostingPage = () => {
   };
 
   // 생성하기 클릭
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     handleError();
     if (!toName.trim()) return;
-    const postId = Date.now();
-    navigate(`/post/${postId}`, { state: { toName, bgType, bgValue } });
+    const trimmed = toName.trim();
+
+    // 색상이라면 COLOR_TOKEN_MAP에서 토큰으로 변환, 이미지라면 URL 전송
+    const payload =
+      bgType === 'color'
+        ? {
+            name: trimmed,
+            backgroundColor: COLOR_TOKEN_MAP[bgValue] ?? 'beige',
+            backgroundUmageURL: null,
+          }
+        : {
+            name: trimmed,
+            backgroundColor: null,
+            backgroundImageURL: bgValue,
+          };
+
+    try {
+      const data = await createPaper(payload);
+      navigate(`/post/${data.id}`);
+    } catch (error) {
+      console.error('Error creating paper:', error);
+    }
   };
 
-  const items = bgType === 'color' ? BG_COLORS : bgImages;
+  // 현재 보여질 아이템들 (색상 or 이미지)
+  const items = useMemo(() => (bgType === 'color' ? BG_COLORS : bgImages), [bgType, bgImages]);
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center bg-white pt-[80px] pb-[100px]">
+    <div className="flex min-h-screen w-full flex-col items-center bg-white pb-[100px] pt-[80px]">
       {/* 받는 사람 입력 */}
       <ToInput
         label={TEXT.toLabel}
