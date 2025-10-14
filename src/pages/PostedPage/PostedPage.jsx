@@ -31,7 +31,7 @@ const PostedPage = () => {
           <SubHeader recipient={recipient} recipientId={recipientId} />
         </div>
 
-        <div className="mx-auto mt-8 w-full max-w-[1200px] p-5 sm:mt-8 sm:p-6 xl:mt-28 xl:p-0">
+        <div className="mx-auto mt-8 w-full max-w-[1200px] p-5 sm:mt-8 sm:p-6 xl:mt-15 xl:p-0">
           {/* 버튼영역 */}
           <div className="mb-6 flex justify-end gap-3">
             <Button
