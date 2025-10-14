@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 export default function useInfiniteScrollMessages({ data, initialCount = 5, nextCount = 3 }) {
   const [displayedMessages, setDisplayedMessages] = useState(data.slice(0, initialCount));
-  const [page, setPage] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(initialCount); // 현재까지 불러온 index
   const [isLoading, setIsLoading] = useState(false);
   const observerRef = useRef(null);
 
@@ -10,16 +10,14 @@ export default function useInfiniteScrollMessages({ data, initialCount = 5, next
     const callback = (entries) => {
       const entry = entries[0];
       if (!entry.isIntersecting || isLoading) return;
-      if (displayedMessages.length >= data.length) return;
+      if (currentIndex >= data.length) return;
 
       setIsLoading(true);
       setTimeout(() => {
-        const nextPage = page + 1;
-        const nextCountTotal = initialCount + (nextPage - 1) * nextCount;
-        const newItems = data.slice(0, nextCountTotal);
-
-        setDisplayedMessages(newItems);
-        setPage(nextPage);
+        // 다음 3개 항목만 추가
+        const nextItems = data.slice(currentIndex, currentIndex + nextCount);
+        setDisplayedMessages((prev) => [...prev, ...nextItems]);
+        setCurrentIndex((prev) => prev + nextCount);
         setIsLoading(false);
       }, 500);
     };
@@ -37,7 +35,7 @@ export default function useInfiniteScrollMessages({ data, initialCount = 5, next
       if (target) observer.unobserve(target);
       observer.disconnect();
     };
-  }, [displayedMessages.length, isLoading, data, page]);
+  }, [isLoading, currentIndex, data]);
 
   return { displayedMessages, observerRef, isLoading };
 }

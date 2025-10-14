@@ -10,7 +10,7 @@ const MessageCardList = ({ recipientId, isEditMode }) => {
   // 데이터 로딩 훅
   const { messages, setMessages, isLoading, hasMore, loadMore } = usePaginatedMessages(
     recipientId,
-    8,
+    5,
     3
   );
   // 스크롤 감지 훅
