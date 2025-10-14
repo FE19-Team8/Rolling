@@ -1,8 +1,8 @@
 export default function SectionTitle({ title, description }) {
   return (
-    <div className="mb-[48px] w-[720px]">
-      <h3 className="mb-[4px] text-[24px] font-bold text-[#181818]">{title}</h3>
-      <p className="mb-[32px] text-[16px] text-[#555555]">{description}</p>
+    <div className="mb-3">
+      <h3 className="text-[24px] font-bold text-gray-900">{title}</h3>
+      <p className="mt-1 text-[16px] text-gray-500">{description}</p>
     </div>
   );
 }

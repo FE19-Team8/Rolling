@@ -66,7 +66,7 @@ const PostingPage = () => {
   const items = useMemo(() => (bgType === 'color' ? BG_COLORS : bgImages), [bgType, bgImages]);
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center bg-white pt-[80px] pb-[100px]">
+    <div className="mx-auto mt-[50px] mb-[25px] flex w-[320px] flex-1 flex-col gap-[50px] md:w-[720px]">
       {/* 받는 사람 입력 */}
       <ToInput
         label={TEXT.toLabel}
@@ -77,7 +77,7 @@ const PostingPage = () => {
         error={error}
       />
 
-      <div className="mb-[48px] w-[720px]">
+      <div className="w-[328px] md:w-[720px]">
         {/* 배경 선택 텍스트 */}
         <SectionTitle title={TEXT.title} description={TEXT.desc} />
 
