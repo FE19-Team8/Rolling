@@ -1,6 +1,6 @@
 export default function ToInput({ label, value, onChange, onBlur, placeholder, error }) {
   return (
-    <div className="mb-6 w-[328px] w-[720px]">
+    <div className="mb-6 w-full">
       <h2 className="mb-2 text-[24px] leading-[36px] font-bold text-gray-900">{label}</h2>
 
       <input
