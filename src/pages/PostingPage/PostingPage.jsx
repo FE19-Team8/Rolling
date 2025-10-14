@@ -13,6 +13,7 @@ import BackgroundList from './components/Background/List';
 import SubmitButton from './components/SubmitButton/SubmitButton';
 
 const PostingPage = () => {
+  console.log('확인');
   const navigate = useNavigate();
 
   const [toName, setToName] = useState('');
