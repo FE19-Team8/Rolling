@@ -3,7 +3,7 @@ import { showToast } from '@/utils/toast.js';
 import { PopoverContent } from './PopoverContent';
 import KakaoShareButton from '../../KakaoShareButton/KakaoShareButton.jsx';
 
-export const ShareContent = ({ name, recipientId }) => {
+export const ShareContent = ({ name, recipientId, messageCount, reactionCount }) => {
   const buttonClasses = `
     px-4 py-3 w-40 text-left
     hover:bg-gray100 hover:cursor-pointer
@@ -41,7 +41,13 @@ export const ShareContent = ({ name, recipientId }) => {
   return (
     <PopoverContent>
       <div className="mx-[1px] my-[10px] flex flex-col">
-        <KakaoShareButton className={buttonClasses} name={name} recipientId={recipientId}>
+        <KakaoShareButton
+          className={buttonClasses}
+          name={name}
+          recipientId={recipientId}
+          messageCount={messageCount}
+          reactionCount={reactionCount}
+        >
           카카오톡 공유
         </KakaoShareButton>
         <button className={buttonClasses} onClick={handleUrlShare}>

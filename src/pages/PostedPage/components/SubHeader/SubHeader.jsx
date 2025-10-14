@@ -96,7 +96,13 @@ const SubHeader = ({ recipient, recipientId }) => {
           <div>
             <Popover>
               <PopoverTrigger type="share" />
-              <ShareContent emojis={reactions} name={name} recipientId={recipientId} />
+              <ShareContent
+                emojis={reactions}
+                name={name}
+                recipientId={recipientId}
+                messageCount={messageCount}
+                reactionCount={reactions.length}
+              />
             </Popover>
           </div>
         </div>
