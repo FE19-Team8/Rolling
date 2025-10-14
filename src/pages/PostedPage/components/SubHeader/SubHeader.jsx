@@ -14,7 +14,7 @@ import {
 import { useReactions } from '../../hooks/useReactions';
 
 const SubHeader = ({ recipient, recipientId }) => {
-  const { reactions, addReaction } = useReactions(recipientId || '', recipient?.topReaction || []);
+  const { reactions, addReaction } = useReactions(recipientId || '');
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // 화면 크기 추적
@@ -34,16 +34,15 @@ const SubHeader = ({ recipient, recipientId }) => {
     src: msg.profileImageURL,
   }));
   const messageCount = recipient.messageCount;
-  const topReactions = recipient.topReactions || [];
 
   const handleEmojiClick = async (emoji) => {
     await addReaction(emoji);
   };
 
   // 모바일에서 count 99 이상이면 뱃지 2개만 표시
-  const isInclude99Plus = topReactions.some((reaction) => reaction.count >= 99);
+  const isInclude99Plus = reactions.some((reaction) => reaction.count >= 99);
   const visibleTopReactions =
-    isSmallScreen && isInclude99Plus ? topReactions.slice(0, 2) : topReactions;
+    isSmallScreen && isInclude99Plus ? reactions.slice(0, 2) : reactions.slice(0, 3);
 
   if (!recipient || !recipientId) return null;
 
@@ -93,7 +92,7 @@ const SubHeader = ({ recipient, recipientId }) => {
               <EmojiPickerContent onEmojiClick={(data) => handleEmojiClick(data.emoji)} />
             </Popover>
           </div>
-          {!isInclude99Plus && <Divider orientation="vertical" />}
+          {reactions.length < 3 && <Divider orientation="vertical" />}
           <div>
             <Popover>
               <PopoverTrigger type="share" />

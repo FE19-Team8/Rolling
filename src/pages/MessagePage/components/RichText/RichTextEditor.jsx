@@ -32,7 +32,7 @@ function RichTextEditor({ onChange }) {
   );
 
   return (
-    <div className="h-[260px] w-[320px] overflow-hidden rounded-[16px] border border-gray-300 md:w-[720px]">
+    <div className="custom-scrollbar h-[260px] w-[320px] overflow-hidden overflow-y-auto rounded-[16px] border border-gray-300 md:w-[720px]">
       <Toolbar editor={editor} />
       <Editor editor={editor} />
     </div>

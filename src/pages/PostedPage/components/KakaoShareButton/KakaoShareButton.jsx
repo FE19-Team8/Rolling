@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 export default function KakaoShareButton({ className, children, name, recipientId }) {
   const url = 'https://rolling-xsll.vercel.app'; // 배포 주소
-  const shareUrl = `${url}/redirect?to=/post/${recipientId}/message`;
+  const shareUrl = `${url}/redirect?to=/post/${recipientId}`;
 
   const images = [
     `${url}/shareImages/image01.png`,
@@ -30,7 +30,7 @@ export default function KakaoShareButton({ className, children, name, recipientI
         description: '친구야 나한테 롤링페이퍼 써볼래?',
         imageUrl: getRandomImage(),
         link: {
-          webUrl: `${url}/post/${recipientId}/message`,
+          webUrl: shareUrl,
         },
       },
       // social: {

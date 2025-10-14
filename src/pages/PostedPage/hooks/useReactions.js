@@ -2,8 +2,8 @@ import { useEffect, useState, useCallback } from 'react';
 
 import api from '@/api/api.js';
 
-export const useReactions = (recipientId, initialTopReactions = []) => {
-  const [reactions, setReactions] = useState(initialTopReactions);
+export const useReactions = (recipientId) => {
+  const [reactions, setReactions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 

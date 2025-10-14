@@ -46,11 +46,11 @@ const PostingPage = () => {
         ? {
             name: trimmed,
             backgroundColor: COLOR_TOKEN_MAP[bgValue] ?? 'beige',
-            backgroundUmageURL: null,
+            backgroundImageURL: null,
           }
         : {
             name: trimmed,
-            backgroundColor: null,
+            backgroundColor: 'beige',
             backgroundImageURL: bgValue,
           };
 
