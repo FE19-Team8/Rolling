@@ -22,7 +22,7 @@ const MessageCardList = ({ recipientId, isEditMode }) => {
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
       {/* 첫 번째 메세지 카드 고정*/}
       <Link
-        to="/post"
+        to={`/post/${recipientId}/message`}
         aria-label="새 메시지 작성 페이지로 이동"
         className="flex h-[280px] items-center justify-center rounded-[16px] bg-white shadow-[0_2px_12px_0_rgba(0,0,0,0.08)]"
       >
