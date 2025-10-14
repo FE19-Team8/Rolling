@@ -82,12 +82,7 @@ export default function RollingPaperCard({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   const isSmallScreen = windowWidth < 768;
-  const isTopReactionsFull = topReactions.length > 1;
-  const isInclude99Plus = topReactions.find((reaction) => reaction.count >= 99);
-  const visibleTopReactions =
-    isTopReactionsFull && isSmallScreen && isInclude99Plus
-      ? topReactions.slice(0, 2)
-      : topReactions;
+  const visibleTopReactions = isSmallScreen ? topReactions.slice(0, 2) : topReactions;
 
   return (
     <div
