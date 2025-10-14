@@ -7,8 +7,8 @@ import Button from '@/components/Button/Button';
 const MainPage = () => {
   const navigate = useNavigate();
   return (
-    <main className="flex flex-col items-center w-full max-w-300 mx-auto py-[60px]">
-      <section className="flex justify-end items-start gap-[152px] w-[1200px] h-[324px] p-[60px_0_60px_60px] rounded-[16px] bg-surface mb-[30px]">
+    <main className="mx-auto flex w-full max-w-300 flex-col items-center py-[60px]">
+      <section className="bg-surface mb-[30px] flex h-[324px] w-[1200px] items-start justify-end gap-[152px] rounded-[16px] p-[60px_0_60px_60px]">
         <FeatureCard
           point="01"
           title={
@@ -20,22 +20,22 @@ const MainPage = () => {
           }
           description="로그인 없이 자유롭게 만들어요."
         />
-        <div className="flex justify-center items-center w-[720px] h-[204px] py-[21px] px-[40px]">
+        <div className="flex h-[204px] w-[720px] items-center justify-center px-[40px] py-[21px]">
           <img
             src={featureImg01}
             alt="롤링페이퍼 생성 예시"
-            className="w-full h-full object-cover flex-shrink-0"
+            className="h-full w-full flex-shrink-0 object-cover"
             width={268}
           />
         </div>
       </section>
 
-      <section className="flex justify-start items-start w-[1200px] h-[324px] p-[60px_192px_60px_0] rounded-[16px] bg-surface mb-[48px]">
-        <div className="flex justify-center items-center w-[720px] h-[204px] px-[125px]">
+      <section className="bg-surface mb-[48px] flex h-[324px] w-[1200px] items-start justify-start rounded-[16px] p-[60px_192px_60px_0]">
+        <div className="flex h-[204px] w-[720px] items-center justify-center px-[125px]">
           <img
             src={featureImg02}
             alt="이모지 반응 예시"
-            className="w-full h-full object-cover flex-shrink-0"
+            className="h-full w-full flex-shrink-0 object-cover"
           />
         </div>
         <FeatureCard
@@ -52,9 +52,9 @@ const MainPage = () => {
         />
       </section>
 
-      <div className="flex justify-center items-center">
+      <div className="flex items-center justify-center">
         <Button size="medium" onClick={() => navigate('/list')}>
-          나도 만들어보기
+          구경해보기
         </Button>
       </div>
     </main>
