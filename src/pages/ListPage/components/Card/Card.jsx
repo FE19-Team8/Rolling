@@ -19,7 +19,7 @@ export default function RollingPaperCard({
 }) {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/post/${id}/message`);
+    navigate(`/post/${id}`);
   };
 
   const baseStyle = `flex flex-col justify-between w-[275px] h-[260px] px-6 py-5 rounded-2xl shadow-sm hover:cursor-pointer`;
@@ -30,8 +30,7 @@ export default function RollingPaperCard({
   const accentedTextStyle =
     'inline-flex text-md font-bold leading-6' +
     (backgroundImageURL ? 'text-white' : 'text-gray700');
-  const textStyle =
-    'text-md leading-6' + (backgroundImageURL ? 'text-white' : 'text-gray700');
+  const textStyle = 'text-md leading-6' + (backgroundImageURL ? 'text-white' : 'text-gray700');
 
   // BACKGROUND SETTING
   const colorBackgroundMap = {
@@ -52,11 +51,7 @@ export default function RollingPaperCard({
   }
 
   return (
-    <div
-      className={baseStyle}
-      style={{ backgroundImage }}
-      onClick={handleClick}
-    >
+    <div className={baseStyle} style={{ backgroundImage }} onClick={handleClick}>
       <div className={bodyStyle}>
         <h1 className={`${nameStyle}`}>To. {name}</h1>
         {profiles && <ProfileStack profiles={profiles} remainingCount={messageCount - 3} />}
@@ -89,11 +84,7 @@ export default function RollingPaperCard({
           />
           <div className="flex gap-2">
             {topReactions.map((reaction, i) => (
-              <EmojiBadge
-                key={i}
-                emoji={reaction.emoji}
-                count={reaction.count}
-              />
+              <EmojiBadge key={i} emoji={reaction.emoji} count={reaction.count} />
             ))}
           </div>
         </div>
