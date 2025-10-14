@@ -20,17 +20,33 @@ export default function RollingPaperCard({
   const [logoHovered, setLogoHovered] = useState(false); // Desktop
   const [isPressed, setIsPressed] = useState(false); // Mobile
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
   const navigate = useNavigate();
 
   const handleNavigate = () => {
     navigate(`/post/${id}`);
   };
-  const handleTouch = () => {
+
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
     setIsPressed(true);
-    setTimeout(() => {
+  };
+  const handleTouchMove = (e) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+  const handleTouchEnd = () => {
+    const distance = Math.abs(touchEndX - touchStartX);
+    if (distance < 10) {
+      // timeout for touch animation
+      setTimeout(() => {
+        setIsPressed(false);
+        handleNavigate();
+      }, 180);
+    } else {
       setIsPressed(false);
-      handleNavigate();
-    }, 180);
+    }
   };
 
   const baseStyle = `flex flex-col justify-between w-52 md:w-[275px] h-58 md:h-[260px] px-6 py-5 rounded-2xl shadow-sm hover:cursor-pointer`;
@@ -88,7 +104,9 @@ export default function RollingPaperCard({
       onClick={() => !('ontouchstart' in window) && handleNavigate()} // Desktop Click (디바이스 터치 지원 체크)
       onMouseEnter={() => setLogoHovered(true)}
       onMouseLeave={() => setLogoHovered(false)}
-      onTouchStart={handleTouch}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       <div className={bodyStyle}>
         <h1 className={`${nameStyle}`}>To. {name}</h1>
