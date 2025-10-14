@@ -10,6 +10,7 @@ import PostingPage from './pages/PostingPage/PostingPage';
 import MessagePage from './pages/MessagePage/MessagePage';
 import EditPage from './pages/EditPage/EditPage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import RedirectPage from './pages/RedirectPage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/post/:id/edit" element={<EditPage />} />
         <Route path="/post/:id/message" element={<MessagePage />} />
         <Route path="*" element={<ErrorPage />} />
+        <Route path="/redirect" element={<RedirectPage />} />
       </Routes>
     </Router>
   );

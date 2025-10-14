@@ -1,26 +1,36 @@
 import { useEffect } from 'react';
-const { Kakao } = window;
 
-export default function KakaoShareButton() {
-  const url = ''; // 배포 주소
-  const resultUrl = window.location.href; // 로컬 주
+export default function KakaoShareButton({ className, children, name, recipientId }) {
+  const url = 'https://rolling-xsll.vercel.app'; // 배포 주소
+  const shareUrl = `${url}/redirect?to=/post/${recipientId}/message`;
+
+  const images = [
+    `${url}/shareImages/image01.png`,
+    `${url}/shareImages/image02.png`,
+    `${url}/shareImages/image03.png`,
+  ];
+  const getRandomImage = () => {
+    const index = Math.floor(Math.random() * images.length);
+    return images[index];
+  };
 
   useEffect(() => {
-    Kakao.cleanup();
-    Kakao.init('ec9362736eeb9743ce6ab9123147857e'); // js 키
-    console.log(Kakao.isInitialized());
+    if (window.Kakao && !window.Kakao.isInitialized()) {
+      window.Kakao.init('ec9362736eeb9743ce6ab9123147857e');
+    }
   }, []);
 
   const shareKakao = () => {
-    Kakao.Share.sendDefault({
+    if (!window.Kakao) return;
+
+    window.Kakao.Share.sendDefault({
       objectType: 'feed',
       content: {
         title: 'Rolling',
         description: '친구야 나한테 롤링페이퍼 써볼래?',
-        imageUrl:
-          'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+        imageUrl: getRandomImage(),
         link: {
-          webUrl: url,
+          webUrl: `${url}/post/${recipientId}/message`,
         },
       },
       // social: {
@@ -29,14 +39,19 @@ export default function KakaoShareButton() {
       // },
       buttons: [
         {
-          title: '롤링페이퍼 쓰러 가기',
+          title: `${name}에게 롤링페이퍼 남기기`,
           link: {
-            webUrl: url,
+            webUrl: shareUrl,
+            mobileWebUrl: shareUrl,
           },
         },
       ],
     });
   };
 
-  return <span>카카오톡 공유하기</span>;
+  return (
+    <button onClick={shareKakao} className={className}>
+      {children}
+    </button>
+  );
 }
