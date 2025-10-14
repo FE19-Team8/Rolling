@@ -1,7 +1,14 @@
 import { useEffect } from 'react';
 
-export default function KakaoShareButton({ className, children, name, recipientId }) {
-  const url = 'https://rolling-xsll.vercel.app'; // 배포 주소
+export default function KakaoShareButton({
+  className,
+  children,
+  name,
+  recipientId,
+  messageCount,
+  reactionCount,
+}) {
+  const url = 'https://fe19-team8.netlify.app'; // 배포 주소
   const shareUrl = `${url}/redirect?to=/post/${recipientId}`;
 
   const images = [
@@ -33,10 +40,10 @@ export default function KakaoShareButton({ className, children, name, recipientI
           webUrl: shareUrl,
         },
       },
-      // social: {
-      //   likeCount: 10,
-      //   commentCount: 20,
-      // },
+      social: {
+        likeCount: reactionCount,
+        commentCount: messageCount,
+      },
       buttons: [
         {
           title: `${name}에게 롤링페이퍼 남기기`,
