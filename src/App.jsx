@@ -11,6 +11,7 @@ import MessagePage from './pages/MessagePage/MessagePage';
 import EditPage from './pages/EditPage/EditPage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import RedirectPage from './pages/RedirectPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="*" element={<ErrorPage />} />
         <Route path="/redirect" element={<RedirectPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
