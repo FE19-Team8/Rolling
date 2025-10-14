@@ -13,7 +13,7 @@ export const useReactions = (recipientId, initialTopReactions = []) => {
     const fetchReactions = async () => {
       try {
         setLoading(true);
-        const res = await api.get(`/19-8/recipients/${recipientId}/reactions/`);
+        const res = await api.get(`/19-8/recipients/${recipientId}/reactions/?limit=100`);
         setReactions(res.results || []);
       } catch (err) {
         console.error('useReactions error: ', err);
@@ -29,11 +29,12 @@ export const useReactions = (recipientId, initialTopReactions = []) => {
   const addReaction = useCallback(
     async (emoji) => {
       try {
-        const updated = await api.post(`/19-8/recipients/${recipientId}/reactions/`, {
+        await api.post(`/19-8/recipients/${recipientId}/reactions/`, {
           emoji,
           type: 'increase',
         });
-        setReactions(updated.topReactions || []);
+        const res = await api.get(`/19-8/recipients/${recipientId}/reactions/?limit=100`);
+        setReactions(res.results || []);
       } catch (err) {
         console.error(err);
       }

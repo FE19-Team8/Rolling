@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import Divider from '@/components/Divider/Divider.jsx';
 import EmojiBadge from '@/components/EmojiBadge/EmojiBadge.jsx';
 import ProfileStack from '@/components/ProfileStack/ProfileStack.jsx';
@@ -12,10 +14,19 @@ import {
 import { useReactions } from '../../hooks/useReactions';
 
 const SubHeader = ({ recipient, recipientId }) => {
-  if (!recipient) return null;
-  if (!recipientId) return null;
+  const { reactions, addReaction } = useReactions(recipientId || '', recipient?.topReaction || []);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const { reactions, addReaction } = useReactions(recipientId, recipient.topReaction);
+  // 화면 크기 추적
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  const isSmallScreen = windowWidth < 768;
+
+  // 유효성 검사
+  if (!recipient || !recipientId) return null;
 
   const name = recipient.name;
   const profiles = recipient.recentMessages?.map((msg) => ({
@@ -23,10 +34,18 @@ const SubHeader = ({ recipient, recipientId }) => {
     src: msg.profileImageURL,
   }));
   const messageCount = recipient.messageCount;
+  const topReactions = recipient.topReactions || [];
 
   const handleEmojiClick = async (emoji) => {
     await addReaction(emoji);
   };
+
+  // 모바일에서 count 99 이상이면 뱃지 2개만 표시
+  const isInclude99Plus = topReactions.some((reaction) => reaction.count >= 99);
+  const visibleTopReactions =
+    isSmallScreen && isInclude99Plus ? topReactions.slice(0, 2) : topReactions;
+
+  if (!recipient || !recipientId) return null;
 
   return (
     <div className="border-gray200 flex w-full justify-center border-b bg-white py-[13px]">
@@ -51,12 +70,20 @@ const SubHeader = ({ recipient, recipientId }) => {
           <div className="flex gap-[8px]">
             {reactions.length > 0 && (
               <>
-                {reactions.slice(0, 3).map((reaction) => (
-                  <EmojiBadge key={reaction.emoji} emoji={reaction.emoji} count={reaction.count} />
+                {visibleTopReactions.map((reaction) => (
+                  <EmojiBadge
+                    key={reaction.emoji}
+                    emoji={reaction.emoji}
+                    count={reaction.count}
+                    onEmojiClick={(emoji) => handleEmojiClick(emoji)}
+                  />
                 ))}
                 <Popover>
                   <PopoverTrigger type="emoji" />
-                  <EmojiContent reactions={reactions} />
+                  <EmojiContent
+                    reactions={reactions}
+                    onEmojiClick={(emoji) => handleEmojiClick(emoji)}
+                  />
                 </Popover>
               </>
             )}
@@ -66,7 +93,7 @@ const SubHeader = ({ recipient, recipientId }) => {
               <EmojiPickerContent onEmojiClick={(data) => handleEmojiClick(data.emoji)} />
             </Popover>
           </div>
-          <Divider orientation="vertical" />
+          {!isInclude99Plus && <Divider orientation="vertical" />}
           <div>
             <Popover>
               <PopoverTrigger type="share" />

@@ -1,11 +1,14 @@
-import { PopoverContent } from './PopoverContent';
 import { showToast } from '@/utils/toast.js';
+
+import { PopoverContent } from './PopoverContent';
 import KakaoShareButton from '../../KakaoShareButton/KakaoShareButton.jsx';
 
 export const ShareContent = ({ name, recipientId }) => {
   const buttonClasses = `
     px-4 py-3 w-40 text-left
     hover:bg-gray100 hover:cursor-pointer
+    active:bg-gray300
+    transition-all duration-300 ease-in-out
   `;
 
   const handleUrlShare = async () => {

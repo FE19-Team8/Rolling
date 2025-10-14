@@ -22,20 +22,19 @@ export default function RollingPaperCard({
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const [touchStartX, setTouchStartX] = useState(0);
-  const [touchEndX, setTouchEndX] = useState(0);
   const navigate = useNavigate();
 
   const handleNavigate = () => {
     navigate(`/post/${id}`);
   };
 
-  const handleTouchStart = (e) => {
-    setTouchStartX(e.touches[0].clientX);
+  const handleTouchStart = (event) => {
+    setTouchStartX(event.touches[0].clientX);
     setIsPressed(true);
   };
 
-  const handleTouchEnd = (e) => {
-    const touchEndX = e.changedTouches[0].clientX; // touchMove 없이도 end 좌표
+  const handleTouchEnd = (event) => {
+    const touchEndX = event.changedTouches[0].clientX; // touchMove 없이도 end 좌표
     const distance = Math.abs(touchEndX - touchStartX);
     if (distance < 10) {
       setTimeout(() => {
@@ -84,7 +83,7 @@ export default function RollingPaperCard({
   }, []);
   const isSmallScreen = windowWidth < 768;
   const isTopReactionsFull = topReactions.length > 1;
-  const isInclude99Plus = topReactions.find((r) => r.count >= 99);
+  const isInclude99Plus = topReactions.find((reaction) => reaction.count >= 99);
   const visibleTopReactions =
     isTopReactionsFull && isSmallScreen && isInclude99Plus
       ? topReactions.slice(0, 2)
@@ -96,7 +95,7 @@ export default function RollingPaperCard({
       style={{
         backgroundImage,
         backgroundPosition: 'center',
-        transform: logoHovered ? 'scale(0.94)' : 'scale(1)',
+        transform: isPressed ? 'scale(0.96)' : logoHovered ? 'scale(0.94)' : 'scale(1)',
         transition: 'transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)',
       }}
       onClick={() => !('ontouchstart' in window) && handleNavigate()} // Desktop Click (디바이스 터치 지원 체크)
