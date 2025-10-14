@@ -11,4 +11,5 @@ export const createPaper = (data = throwIfMissing('data')) => api.post(END_POINT
 
 export const getTargetPaper = (id = throwIfMissing('id')) => api.get(`${END_POINT}${id}/`);
 
-export const deletePaper = (id = throwIfMissing('id')) => api.delete(`${END_POINT}${id}/`);
+export const deletePaper = (recipientId = throwIfMissing('recipientId')) =>
+  api.delete(`/19-8/recipients/${recipientId}/`);

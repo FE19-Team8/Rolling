@@ -5,8 +5,6 @@ import Background from '@/pages/PostedPage/components/Background/Background';
 import MessageCardList from '@/pages/PostedPage/components/MessageCardList/MessageCardList';
 import SubHeader from '@/pages/PostedPage/components/SubHeader/SubHeader';
 
-MessageCardList;
-
 const PostedPage = () => {
   const { id: recipientId } = useParams();
 

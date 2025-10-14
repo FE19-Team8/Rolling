@@ -55,7 +55,7 @@ const MainPage = () => {
 
       <div className="flex items-center justify-center">
         <Button size="medium" onClick={() => navigate('/list')}>
-          나도 만들어보기
+          구경해보기
         </Button>
       </div>
     </main>
