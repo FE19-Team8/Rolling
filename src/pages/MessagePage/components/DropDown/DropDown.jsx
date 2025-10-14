@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState, useEffect, useRef } from 'react';
-import DownArrowIcon from '@/assets/icons/ic_arrow_down.svg?react';
 import clsx from 'clsx';
+
+import DownArrowIcon from '@/assets/icons/ic_arrow_down.svg?react';
 
 const BASE_BUTTON_STYLE =
   'flex items-center justify-between w-[320px] h-[50px] px-4 cursor-pointer transition-all';

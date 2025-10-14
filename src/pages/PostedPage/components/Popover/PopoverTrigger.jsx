@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
-import PopoverContext from './PopoverContext';
+
 import Button from '@/components/Button/Button';
+
+import PopoverContext from './PopoverContext';
 
 export const PopoverTrigger = ({ type }) => {
   const { toggle } = useContext(PopoverContext);

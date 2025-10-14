@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import Button from '@/components/Button/Button';
 import MessageCard from '@/pages/PostedPage/components/MessageCard/MessageCard';
 import Skeleton from '@/components/Skeleton/Skeleton';

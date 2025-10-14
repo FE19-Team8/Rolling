@@ -1,5 +1,6 @@
-import DefaultProfileIcon from '@/assets/icons/ic_default_profile.svg';
 import clsx from 'clsx';
+
+import DefaultProfileIcon from '@/assets/icons/ic_default_profile.svg';
 
 const VARIANT_CLASSES = {
   selected: 'border-2 border-purple-600',

@@ -1,7 +1,8 @@
 import React from 'react';
-import ToolbarButton from './ToolbarButton';
 import { useEffect } from 'react';
 import { useReducer } from 'react';
+
+import ToolbarButton from './ToolbarButton';
 
 const forceUpdateReducer = (state) => state + 1;
 

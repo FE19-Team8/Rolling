@@ -1,7 +1,8 @@
 import Profile from '@/components/Profile/Profile';
 import Divider from '@/components/Divider/Divider';
-import Badge from '../Badge/Badge';
 import Button from '@/components/Button/Button';
+
+import Badge from '../Badge/Badge';
 
 const MessageContent = ({
   sender,

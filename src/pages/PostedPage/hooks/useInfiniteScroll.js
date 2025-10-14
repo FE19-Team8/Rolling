@@ -1,13 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-export default function useInfiniteScrollMessages({
-  data,
-  initialCount = 5,
-  nextCount = 3,
-}) {
-  const [displayedMessages, setDisplayedMessages] = useState(
-    data.slice(0, initialCount),
-  );
+export default function useInfiniteScrollMessages({ data, initialCount = 5, nextCount = 3 }) {
+  const [displayedMessages, setDisplayedMessages] = useState(data.slice(0, initialCount));
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const observerRef = useRef(null);

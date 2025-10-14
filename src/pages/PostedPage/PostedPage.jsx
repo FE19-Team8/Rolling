@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
-import Layout from '@/pages/Layout';
+
+import Layout from '@/pages/Layout.jsx';
 import Background from '@/pages/PostedPage/components/Background/Background';
 import MessageCardList from '@/pages/PostedPage/components/MessageCardList/MessageCardList';
 import SubHeader from '@/pages/PostedPage/components/SubHeader/SubHeader';
