@@ -4,12 +4,25 @@ import Layout from '@/pages/Layout';
 import Background from '@/pages/PostedPage/components/Background/Background';
 import MessageCardList from '@/pages/PostedPage/components/MessageCardList/MessageCardList';
 import SubHeader from '@/pages/PostedPage/components/SubHeader/SubHeader';
+import CommonHead from '@/meta/CommonHead';
 
 const PostedPage = () => {
   const { id: recipientId } = useParams();
+  const META_DATA = {
+    title: '롤링 페이퍼를 편집하는 곳 입니다.',
+    desc: '자유롭게 롤링 페이퍼를 편집해보세요',
+    image: 'https://rolling-xsll.vercel.app/og/og_edit',
+    canonical: `https://rolling-xsll.vercel.app/post/${recipientId}/edit`,
+  };
 
   return (
     <Layout>
+      <CommonHead
+        title={META_DATA.title}
+        description={META_DATA.desc}
+        canonical={META_DATA.canonical}
+        image={META_DATA.image}
+      />
       <Background color={'beige'} imageURL={'https://picsum.photos/id/1058/3840/2160'} />
       <div className="flex min-h-screen flex-col">
         {/* SubHeader 영역 */}
