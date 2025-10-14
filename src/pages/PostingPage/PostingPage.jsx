@@ -77,7 +77,7 @@ const PostingPage = () => {
         error={error}
       />
 
-      <div className="mb-[48px] w-[720px]">
+      <div className="w-[328px] md:w-[720px]">
         {/* 배경 선택 텍스트 */}
         <SectionTitle title={TEXT.title} description={TEXT.desc} />
 

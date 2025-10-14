@@ -2,7 +2,7 @@ import ToggleButton from './ToggleButton';
 
 export default function ToggleGroup({ bgType, setBgType, setBgValue, bgColors, bgImages, labels }) {
   return (
-    <div className="mb-[32px] flex h-[40px] w-[244px]">
+    <div className="mb-4 flex gap-2">
       {['color', 'image'].map((type) => (
         <ToggleButton
           key={type}
