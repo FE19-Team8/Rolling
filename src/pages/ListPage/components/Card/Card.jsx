@@ -33,13 +33,11 @@ export default function RollingPaperCard({
     setTouchStartX(e.touches[0].clientX);
     setIsPressed(true);
   };
-  const handleTouchMove = (e) => {
-    setTouchEndX(e.touches[0].clientX);
-  };
-  const handleTouchEnd = () => {
+
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX; // touchMove 없이도 end 좌표
     const distance = Math.abs(touchEndX - touchStartX);
     if (distance < 10) {
-      // timeout for touch animation
       setTimeout(() => {
         setIsPressed(false);
         handleNavigate();
@@ -105,7 +103,6 @@ export default function RollingPaperCard({
       onMouseEnter={() => setLogoHovered(true)}
       onMouseLeave={() => setLogoHovered(false)}
       onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
       <div className={bodyStyle}>
