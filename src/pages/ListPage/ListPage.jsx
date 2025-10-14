@@ -8,21 +8,21 @@ import CardList from './components/CardList/CardList';
 
 const ListPage = () => {
   const navigate = useNavigate();
-  const { recipients, loading, error, showSkeleton } = useRecipients();
+  const { recipients, loading, showSkeleton } = useRecipients();
 
   const isEmpty =
     !loading && !recipients.popular?.results?.length && !recipients.recent?.results?.length;
 
   // STYLES
   const sectionStyle =
-    'flex flex-col items-center gap-4 mx-5 md:mx-6 my-13 overflow-hidden lg:overflow-visible';
+    'flex flex-col items-center gap-4 mx-5 md:mx-6 my-6 overflow-hidden lg:overflow-visible';
   const titleStyle = 'font-bold text-2xl leading-9 tracking-[-0.01em] w-full';
   const ListStyle = 'relative w-full';
 
   if (loading && showSkeleton)
     return (
       <div className="mb-[218px] flex flex-col lg:items-center">
-        <div className="mt-[50px] mb-[64px]">
+        <div className="mt-0 xl:mt-[20px]">
           <section className={sectionStyle}>
             <h2 className={titleStyle}>인기 롤링 페이퍼🔥</h2>
             <div className="flex gap-[20px]">
@@ -50,41 +50,49 @@ const ListPage = () => {
 
   if (isEmpty)
     return (
-      <div>
-        <h1 className={titleStyle}>아직 등록된 롤링페이퍼가 없어요</h1>
-        <div className="flex items-center justify-center">
+      <>
+        <div>
+          <h1 className={titleStyle}>아직 등록된 롤링페이퍼가 없어요</h1>
+        </div>
+        <div className="sticky bottom-[20px] flex items-center justify-center px-5 md:px-6">
           <Button size="medium" onClick={() => navigate('/post')}>
             내 공간 만들어보기
           </Button>
         </div>
-      </div>
+      </>
     );
+
   if (!recipients?.results?.length)
     return (
-      <div style={{ height: 'calc(100vh - 90px)' }}>
-        <div className="flex h-full flex-col justify-between lg:items-center">
-          <div className="mt-[50px] mb-[64px]">
-            <section className={sectionStyle}>
-              <h2 className={titleStyle}>인기 롤링 페이퍼🔥</h2>
-              <div className={ListStyle}>
-                <CardList cards={recipients.popular.results || []} />
-              </div>
-            </section>
-            <section className={sectionStyle}>
-              <h2 className={titleStyle}>최근에 만든 롤링 페이퍼⭐</h2>
-              <div className={ListStyle}>
-                <CardList cards={recipients.recent.results || []} />
-              </div>
-            </section>
-          </div>
-          {/* onClick={() => navigate('/PostedPage')} */}
-          <div className="flex min-w-[280px] p-6 lg:mb-30">
-            <Button size={'sm' ? 'large' : 'medium'} onClick={() => navigate('/post')}>
+      <>
+        <div className="mt-0 flex flex-col md:mt-[20px] lg:items-center">
+          <section className={sectionStyle}>
+            <h2 className={titleStyle}>인기 롤링 페이퍼🔥</h2>
+            <div className={ListStyle}>
+              <CardList cards={recipients.popular.results || []} />
+            </div>
+          </section>
+          <section className={sectionStyle}>
+            <h2 className={titleStyle}>최근에 만든 롤링 페이퍼⭐</h2>
+            <div className={ListStyle}>
+              <CardList cards={recipients.recent.results || []} />
+            </div>
+          </section>
+        </div>
+
+        <div className="sticky bottom-0 flex w-full justify-center px-5 md:px-6">
+          <div className="w-full bg-gradient-to-t from-white via-white/100 to-transparent pt-12 pb-6">
+            <Button
+              size="medium"
+              className="mx-auto block w-full lg:w-[280px]"
+              onClick={() => navigate('/post')}
+            >
               나도 만들어보기
             </Button>
           </div>
         </div>
-      </div>
+      </>
     );
 };
+
 export default ListPage;
