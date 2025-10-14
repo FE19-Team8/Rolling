@@ -4,13 +4,11 @@ import FeatureCard from '@/pages/MainPage/components/FeatureCard';
 import featureImg01 from '@/assets/images/main/feature_01.png';
 import featureImg02 from '@/assets/images/main/feature_02.png';
 import Button from '@/components/Button/Button';
-import CommonHead from '@/meta/CommonHead';
 
 const MainPage = () => {
   const navigate = useNavigate();
   return (
     <>
-      <CommonHead />
       <main className="mx-auto flex w-full max-w-[1200px] flex-col items-center px-3 py-[30px] pb-0 md:px-6 md:py-[60px] md:pb-0 xl:px-0 xl:py-[60px] xl:pb-0">
         <section className="bg-surface mb-[30px] flex h-auto w-full flex-col items-start justify-end gap-[40px] rounded-[16px] p-[6px] md:p-[40px] xl:h-[324px] xl:flex-row xl:gap-[152px] xl:px-0 xl:py-[60px] xl:pl-[60px]">
           <FeatureCard

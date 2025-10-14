@@ -12,12 +12,10 @@ import EditPage from './pages/EditPage/EditPage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
 import RedirectPage from './pages/RedirectPage';
 import Footer from './components/Footer/Footer';
-import CommonHead from './meta/CommonHead';
 
 function App() {
   return (
     <Router>
-      <CommonHead />
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />

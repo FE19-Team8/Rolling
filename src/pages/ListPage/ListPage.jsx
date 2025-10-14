@@ -1,20 +1,12 @@
 import { useNavigate } from 'react-router-dom';
 
 import Skeleton from '@/components/Skeleton/Skeleton';
-import CommonHead from '@/meta/CommonHead';
 
 import { useRecipients } from './useRecipients';
 import Button from '../../components/Button/Button';
 import CardList from './components/CardList/CardList';
 
 const ListPage = () => {
-  const META_DATA = {
-    title: '롤링페이퍼 리스트 | 인기 롤링페이퍼 & 갓 작성된 이야기들',
-    desc: '지금 가장 사랑받는 롤링페이퍼부터 방금 작성된 따끈따끈한 새 이야기까지!',
-    image: 'https://rolling-xsll.vercel.app/og/og_list',
-    canonical: 'https://rolling-xsll.vercel.app/post/list',
-  };
-
   const navigate = useNavigate();
   const { recipients, loading, showSkeleton } = useRecipients();
 
@@ -30,12 +22,6 @@ const ListPage = () => {
   if (loading && showSkeleton)
     return (
       <div className="mb-[218px] flex flex-col lg:items-center">
-        <CommonHead
-          title={META_DATA.title}
-          description={META_DATA.desc}
-          canonical={META_DATA.canonical}
-          image={META_DATA.image}
-        />
         <div className="mt-0 xl:mt-[20px]">
           <section className={sectionStyle}>
             <h2 className={titleStyle}>인기 롤링 페이퍼🔥</h2>
@@ -65,12 +51,6 @@ const ListPage = () => {
   if (isEmpty)
     return (
       <>
-        <CommonHead
-          title={META_DATA.title}
-          description={META_DATA.desc}
-          canonical={META_DATA.canonical}
-          image={META_DATA.image}
-        />
         <div>
           <h1 className={titleStyle}>아직 등록된 롤링페이퍼가 없어요</h1>
         </div>
@@ -85,12 +65,6 @@ const ListPage = () => {
   if (!recipients?.results?.length)
     return (
       <>
-        <CommonHead
-          title={META_DATA.title}
-          description={META_DATA.desc}
-          canonical={META_DATA.canonical}
-          image={META_DATA.image}
-        />
         <div className="mt-0 flex flex-col md:mt-[20px] lg:items-center">
           <section className={sectionStyle}>
             <h2 className={titleStyle}>인기 롤링 페이퍼🔥</h2>

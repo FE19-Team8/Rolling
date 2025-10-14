@@ -7,18 +7,11 @@ import MessageCardList from '@/pages/PostedPage/components/MessageCardList/Messa
 import SubHeader from '@/pages/PostedPage/components/SubHeader/SubHeader.jsx';
 import useDeletePaper from '@/pages/PostedPage/hooks/useDeletePaper.js';
 import Button from '@/components/Button/Button.jsx';
-import CommonHead from '@/meta/CommonHead.jsx';
 
 import { useRecipientDetails } from './hooks/useRecipientDetails.js';
 
 const PostedPage = () => {
   const { id: recipientId } = useParams();
-  const META_DATA = {
-    title: '롤링페이퍼 구경하기 | 따뜻한 마음이 담긴 이야기들',
-    desc: '소중한 사람에게 전해진 진심 어린 메시지들을 만나보세요.',
-    image: 'https://rolling-xsll.vercel.app/og/og_posted.png',
-    canonical: `https://rolling-xsll.vercel.app/post/${recipientId}`,
-  };
   const [isEditMode, setIsEditMode] = useState(false);
 
   const onToggleEdit = () => {

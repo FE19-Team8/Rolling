@@ -4,7 +4,6 @@ import { useMemo } from 'react';
 
 import useBackgroundImages from '@/pages/PostingPage/hooks/UseBackgroundImages';
 import { createPaper } from '@/api/papers';
-import CommonHead from '@/meta/CommonHead';
 
 import { BG_COLORS, COLOR_TOKEN_MAP, TEXT } from './Constants';
 import ToInput from './components/ToInput/ToInput';
@@ -16,13 +15,6 @@ import SubmitButton from './components/SubmitButton/SubmitButton';
 const PostingPage = () => {
   console.log('확인');
   const navigate = useNavigate();
-
-  const META_DATA = {
-    title: '롤링페이퍼 만들기 | 마음을 전할 새로운 페이지를 시작하세요',
-    desc: '롤링페이퍼를 직접 만들어 소중한 사람에게 따뜻한 메시지를 모아보세요',
-    image: 'https://rolling-xsll.vercel.app/og/og_posting',
-    canonical: `https://rolling-xsll.vercel.app/post/`,
-  };
 
   const [toName, setToName] = useState('');
   const [error, setError] = useState(null);
@@ -77,12 +69,6 @@ const PostingPage = () => {
   return (
     <div className="mx-auto mt-[50px] mb-[25px] flex w-[320px] flex-1 flex-col gap-[50px] md:w-[720px]">
       {/* 받는 사람 입력 */}
-      <CommonHead
-        title={META_DATA.title}
-        description={META_DATA.desc}
-        canonical={META_DATA.canonical}
-        image={META_DATA.image}
-      />
       <ToInput
         label={TEXT.toLabel}
         value={toName}
