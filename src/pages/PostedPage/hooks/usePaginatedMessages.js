@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+
 import { getMessageList } from '@/api/messages';
 
 export default function usePaginatedMessages(recipientId, initialLimit = 8, nextLimit = 3) {

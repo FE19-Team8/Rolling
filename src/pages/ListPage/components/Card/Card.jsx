@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom';
 
 import ProfileStack from '@/components/ProfileStack/ProfileStack';
 import EmojiBadge from '@/components/EmojiBadge/EmojiBadge';
-
 import bgBeige from '@/assets/images/card_bg/bg_beige.png';
 import bgPurple from '@/assets/images/card_bg/bg_purple.png';
 import bgBlue from '@/assets/images/card_bg/bg_blue.png';

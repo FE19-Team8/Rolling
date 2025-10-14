@@ -1,20 +1,15 @@
-export default function FeatureCard({
-  point,
-  title,
-  description,
-  width = 268,
-}) {
+export default function FeatureCard({ point, title, description, width = 268 }) {
   return (
     <div className={`flex flex-col w-[${width}px]`}>
-      <span className="w-[82px]  flex justify-center items-center px-3 py-1.5 rounded-full bg-purple-600 text-white text-[14px] font-bold leading-[20px] tracking-[-0.07px] mb-4">
+      <span className="mb-4 flex w-[82px] items-center justify-center rounded-full bg-purple-600 px-3 py-1.5 text-[14px] leading-[20px] font-bold tracking-[-0.07px] text-white">
         Point. {point}
       </span>
 
-      <h3 className="text-gray-900 text-[24px] font-bold leading-[36px] tracking-[-0.24px] mb-2">
+      <h3 className="mb-2 text-[24px] leading-[36px] font-bold tracking-[-0.24px] text-gray-900">
         {title}
       </h3>
 
-      <p className="text-gray-500 text-[18px] font-normal leading-[28px] tracking-[-0.18px]">
+      <p className="text-[18px] leading-[28px] font-normal tracking-[-0.18px] text-gray-500">
         {description}
       </p>
     </div>

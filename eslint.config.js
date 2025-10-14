@@ -3,6 +3,7 @@ import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import prettierPlugin from 'eslint-plugin-prettier';
+import importPlugin from 'eslint-plugin-import';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
@@ -16,6 +17,7 @@ export default defineConfig([
     ],
     plugins: {
       prettier: prettierPlugin,
+      import: importPlugin,
     },
     languageOptions: {
       ecmaVersion: 2020,
@@ -27,6 +29,20 @@ export default defineConfig([
       },
     },
     rules: {
+      'import/no-absolute-path': 'error',
+      'import/no-named-as-default': 'off',
+
+      // ✅ 대소문자 불일치 탐지
+      'import/no-unresolved': ['error', { caseSensitive: true, ignore: ['\\.svg\\?react$'] }],
+
+      // ✅ import 순서 자동 정렬 (선택)
+      'import/order': [
+        'warn',
+        {
+          groups: [['builtin', 'external'], ['internal'], ['parent', 'sibling', 'index']],
+          'newlines-between': 'always',
+        },
+      ],
       // =====================
       // 네이밍 규칙
       // =====================
@@ -86,6 +102,12 @@ export default defineConfig([
     },
     settings: {
       react: { version: 'detect' },
+      'import/resolver': {
+        alias: {
+          map: [['@', './src']],
+          extensions: ['.js', '.jsx', '.json'],
+        },
+      },
     },
   },
 ]);
