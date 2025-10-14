@@ -13,6 +13,7 @@ const Button = ({
   iconName,
   paddingX,
   paddingY,
+  className,
 }) => {
   const icon = iconName ? ICONS[iconName] : null;
 
@@ -30,7 +31,8 @@ const Button = ({
     'cursor-pointer flex items-center justify-center gap-[10px] transition-colors',
     VARIANT_CLASSES[variant],
     shape === 'circle' ? SHAPE_CLASSES.circle : SIZE_CLASSES[size],
-    shape === 'circle' ? 'rounded-full' : 'rounded-xl'
+    shape === 'circle' ? 'rounded-full' : 'rounded-xl',
+    className
   );
 
   return (
