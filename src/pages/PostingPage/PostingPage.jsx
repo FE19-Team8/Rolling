@@ -5,6 +5,7 @@ import useBackgroundImages from '@/pages/PostingPage/hooks/UseBackgroundImages';
 import { createPaper } from '@/api/papers';
 import { useMemo } from 'react';
 
+import { BG_COLORS, TEXT } from './Constants';
 import ToInput from './components/ToInput/ToInput';
 import SectionTitle from './components/SectionTitle/SectionTitle';
 import ToggleGroup from './components/Toggle/ToggleGroup';

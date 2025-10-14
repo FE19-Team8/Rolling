@@ -1,5 +1,6 @@
-import Profile from '@/components/Profile/Profile';
 import clsx from 'clsx';
+
+import Profile from '@/components/Profile/Profile';
 
 const ProfileStack = ({ profiles = [], remainingCount, onClick }) => {
   const visibleProfiles = profiles.slice(0, 3);

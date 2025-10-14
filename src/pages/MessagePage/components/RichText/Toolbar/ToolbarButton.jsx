@@ -4,11 +4,12 @@ import React from 'react';
 function ToolbarButton({ title, onClick, isActive, content }) {
   return (
     <button
+      type="button"
       title={title}
       onClick={onClick}
       className={clsx(
-        'w-6 h-6 flex items-center justify-center transition rounded hover:bg-gray-300',
-        isActive && 'text-purple-600',
+        'flex h-6 w-6 items-center justify-center rounded transition hover:bg-gray-300',
+        isActive && 'text-purple-600'
       )}
     >
       {content}

@@ -142,10 +142,12 @@
   transform: translateY(-50%);
 }
 
-  .ProseMirror li p {
+.ProseMirror li p {
   margin-left: 1rem;
   display: inline-block !important; 
-  width: auto;           
+  width: auto;      
+}     
+
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px !important;
 }
@@ -158,5 +160,4 @@
 
 .custom-scrollbar::-webkit-scrollbar-track {
   background-color: none !important;
-}
 }

@@ -1,6 +1,7 @@
 import Divider from '@/components/Divider/Divider';
 import EmojiBadge from '@/components/EmojiBadge/EmojiBadge';
 import ProfileStack from '@/components/ProfileStack/ProfileStack';
+
 import {
   Popover,
   PopoverTrigger,

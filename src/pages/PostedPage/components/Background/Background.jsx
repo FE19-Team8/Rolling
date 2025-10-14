@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-const Background = ({ color = beige, imageURL }) => {
+const Background = ({ color = 'beige', imageURL }) => {
   const colorTheme = {
     beige: 'bg-beige200',
     blue: 'bg-blue200',
@@ -21,7 +21,7 @@ const Background = ({ color = beige, imageURL }) => {
   const classes = clsx(
     'min-h-screen w-full fixed z-[-1]',
     backgroundStyle,
-    imageURL ? '' : colorTheme[color],
+    imageURL ? '' : colorTheme[color]
   );
 
   return <div className={classes} style={backgroundStyle} />;

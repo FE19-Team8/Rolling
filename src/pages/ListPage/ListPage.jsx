@@ -1,8 +1,10 @@
 import { useNavigate } from 'react-router-dom';
+
+import Skeleton from '@/components/Skeleton/Skeleton';
+
 import { useRecipients } from './useRecipients';
 import Button from '../../components/Button/Button';
 import CardList from './components/CardList/CardList';
-import Skeleton from '@/components/Skeleton/Skeleton';
 
 const ListPage = () => {
   const navigate = useNavigate();
@@ -76,7 +78,7 @@ const ListPage = () => {
           </div>
           {/* onClick={() => navigate('/PostedPage')} */}
           <div className="fixed bottom-0 w-full p-6 lg:bottom-[218px] lg:flex lg:w-70 lg:items-center lg:justify-center">
-            <Button size={'sm' ? 'large' : 'medium'} onClick={() => navigate('/post')}>
+            <Button size={error ? 'large' : 'medium'} onClick={() => navigate('/post')}>
               나도 만들어보기
             </Button>
           </div>

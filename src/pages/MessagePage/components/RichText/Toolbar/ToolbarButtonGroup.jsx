@@ -1,7 +1,8 @@
 import React from 'react';
-import ToolbarButton from './ToolbarButton';
 import { useEffect } from 'react';
 import { useReducer } from 'react';
+
+import ToolbarButton from './ToolbarButton';
 
 const forceUpdateReducer = (state) => state + 1;
 
@@ -20,7 +21,7 @@ function ToolbarButtonGroup({ editor, buttons }) {
   if (!editor) return null;
 
   return (
-    <div className={`flex items-center gap-1 h-6 justify-between`}>
+    <div className={`flex h-6 items-center justify-between gap-1`}>
       {buttons.map(({ title, command, isActiveCheck, content }) => (
         <ToolbarButton
           key={title}
