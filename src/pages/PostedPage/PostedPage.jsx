@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
+
 import Layout from '@/pages/Layout.jsx';
 import Background from '@/pages/PostedPage/components/Background/Background';
 import MessageCardList from '@/pages/PostedPage/components/MessageCardList/MessageCardList';
 import SubHeader from '@/pages/PostedPage/components/SubHeader/SubHeader';
 import useDeletePaper from '@/pages/PostedPage/hooks/useDeletePaper';
 import Button from '@/components/Button/Button';
-
 
 const PostedPage = () => {
   const { id: recipientId } = useParams();
