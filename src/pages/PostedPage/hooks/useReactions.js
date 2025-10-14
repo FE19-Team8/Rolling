@@ -29,11 +29,12 @@ export const useReactions = (recipientId, initialTopReactions = []) => {
   const addReaction = useCallback(
     async (emoji) => {
       try {
-        const updated = await api.post(`/19-8/recipients/${recipientId}/reactions/`, {
+        await api.post(`/19-8/recipients/${recipientId}/reactions/`, {
           emoji,
           type: 'increase',
         });
-        setReactions(updated.topReactions || []);
+        const res = await api.get(`/19-8/recipients/${recipientId}/reactions/`);
+        setReactions(res.results || []);
       } catch (err) {
         console.error(err);
       }
