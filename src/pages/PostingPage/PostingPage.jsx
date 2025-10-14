@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BG_COLORS, COLOR_TOKEN_MAP, TEXT } from './Constants';
-import useBackgroundImages from '@/pages/PostingPage/hooks/UseBackgroundImages';
-import { createPaper } from '@/api/papers';
 import { useMemo } from 'react';
 
-import { BG_COLORS, TEXT } from './Constants';
+import useBackgroundImages from '@/pages/PostingPage/hooks/UseBackgroundImages';
+import { createPaper } from '@/api/papers';
+
+import { BG_COLORS, COLOR_TOKEN_MAP, TEXT } from './Constants';
 import ToInput from './components/ToInput/ToInput';
 import SectionTitle from './components/SectionTitle/SectionTitle';
 import ToggleGroup from './components/Toggle/ToggleGroup';
@@ -66,7 +66,7 @@ const PostingPage = () => {
   const items = useMemo(() => (bgType === 'color' ? BG_COLORS : bgImages), [bgType, bgImages]);
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center bg-white pb-[100px] pt-[80px]">
+    <div className="flex min-h-screen w-full flex-col items-center bg-white pt-[80px] pb-[100px]">
       {/* 받는 사람 입력 */}
       <ToInput
         label={TEXT.toLabel}
