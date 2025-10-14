@@ -30,7 +30,7 @@ export const VARIANT_CLASSES = {
 
   noLine: `
     bg-white hover:bg-gray-200 focus:bg-gray-300 border-none
-
+    active:bg-gray300
   `,
 };
 

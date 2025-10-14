@@ -13,7 +13,7 @@ export const useReactions = (recipientId, initialTopReactions = []) => {
     const fetchReactions = async () => {
       try {
         setLoading(true);
-        const res = await api.get(`/19-8/recipients/${recipientId}/reactions/`);
+        const res = await api.get(`/19-8/recipients/${recipientId}/reactions/?limit=100`);
         setReactions(res.results || []);
       } catch (err) {
         console.error('useReactions error: ', err);
@@ -33,7 +33,7 @@ export const useReactions = (recipientId, initialTopReactions = []) => {
           emoji,
           type: 'increase',
         });
-        const res = await api.get(`/19-8/recipients/${recipientId}/reactions/`);
+        const res = await api.get(`/19-8/recipients/${recipientId}/reactions/?limit=100`);
         setReactions(res.results || []);
       } catch (err) {
         console.error(err);

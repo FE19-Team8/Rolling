@@ -5,7 +5,9 @@ import { PopoverContent } from './PopoverContent.jsx';
 export const EmojiPickerContent = ({ onEmojiClick }) => {
   return (
     <PopoverContent>
-      <EmojiPicker onEmojiClick={onEmojiClick} />
+      <div className="w-60 overflow-auto md:w-full">
+        <EmojiPicker onEmojiClick={onEmojiClick} />
+      </div>
     </PopoverContent>
   );
 };
