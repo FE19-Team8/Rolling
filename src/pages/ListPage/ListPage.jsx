@@ -75,8 +75,8 @@ const ListPage = () => {
             </section>
           </div>
           {/* onClick={() => navigate('/PostedPage')} */}
-          <div className="flex items-center justify-center">
-            <Button size="medium" onClick={() => navigate('/post')}>
+          <div className="fixed bottom-0 w-full p-6 lg:bottom-[218px] lg:flex lg:w-70 lg:items-center lg:justify-center">
+            <Button size={'sm' ? 'large' : 'medium'} onClick={() => navigate('/post')}>
               나도 만들어보기
             </Button>
           </div>

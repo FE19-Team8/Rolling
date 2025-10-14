@@ -43,7 +43,7 @@
   --color-gray900: #181818;
 
   --color-error: #dc3a3a;
-  --color-surface: #dc3a3a;
+  --color-surface: #F6F8FF;
 }
 
 /*=== FONTS === */
@@ -160,4 +160,5 @@
 
 .custom-scrollbar::-webkit-scrollbar-track {
   background-color: none !important;
+}
 }
