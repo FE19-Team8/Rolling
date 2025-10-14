@@ -1,16 +1,12 @@
 import { PopoverContent } from './PopoverContent';
-import { showToast } from '../../../../../utils/toast';
-import KakaoShareButton from '../../KakaoShareButton/KakaoShareButton';
+import { showToast } from '@/utils/toast.js';
+import KakaoShareButton from '../../KakaoShareButton/KakaoShareButton.jsx';
 
-export const ShareContent = () => {
+export const ShareContent = ({ name, recipientId }) => {
   const buttonClasses = `
     px-4 py-3 w-40 text-left
     hover:bg-gray100 hover:cursor-pointer
   `;
-
-  const handleKakaoShare = () => {
-    console.log('KakaoTalk share clicked');
-  };
 
   const handleUrlShare = async () => {
     try {
@@ -42,9 +38,9 @@ export const ShareContent = () => {
   return (
     <PopoverContent>
       <div className="mx-[1px] my-[10px] flex flex-col">
-        <button className={buttonClasses} onClick={handleKakaoShare}>
-          <KakaoShareButton />
-        </button>
+        <KakaoShareButton className={buttonClasses} name={name} recipientId={recipientId}>
+          카카오톡 공유
+        </KakaoShareButton>
         <button className={buttonClasses} onClick={handleUrlShare}>
           URL 공유
         </button>
