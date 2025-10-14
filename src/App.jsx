@@ -10,6 +10,7 @@ import PostingPage from './pages/PostingPage/PostingPage';
 import MessagePage from './pages/MessagePage/MessagePage';
 import EditPage from './pages/EditPage/EditPage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/post/:id/message" element={<MessagePage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
