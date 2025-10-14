@@ -94,6 +94,7 @@ export default function RollingPaperCard({
       className={baseStyle}
       style={{
         backgroundImage,
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
         transform: isPressed ? 'scale(0.96)' : logoHovered ? 'scale(0.94)' : 'scale(1)',
         transition: 'transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)',
