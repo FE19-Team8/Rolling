@@ -55,7 +55,7 @@ export default function RollingPaperCard({
     'inline-flex text-sm md:text-md font-bold leading-6' +
     (backgroundImageURL ? 'text-white' : 'text-gray700');
   const textStyle =
-    'text-sm md:text-md leading-6' + (backgroundImageURL ? 'text-white' : 'text-gray700');
+    'text-sm md:text-md leading-6 ' + (backgroundImageURL ? 'text-white' : 'text-gray700');
 
   // BACKGROUND SETTING
   const colorBackgroundMap = {
@@ -65,7 +65,7 @@ export default function RollingPaperCard({
     green: bgGreen,
   };
   const backgroundImage = backgroundImageURL
-    ? `url(${backgroundImageURL})`
+    ? `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${backgroundImageURL})`
     : `url(${colorBackgroundMap[backgroundColor] ?? ''})`;
 
   // MESSAGE COUNT SETTING
