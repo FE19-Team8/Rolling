@@ -90,6 +90,7 @@
 
 ```graphql
 src
+├── api             # HTTPS 요청 api
 ├── assets          # 정적 리소스(이미지, 아이콘 등)
 ├── components      # 공용 UI 컴포넌트
 ├── pages           # 페이지 컴포넌트
@@ -99,7 +100,8 @@ src
 │   ├── MessagePage
 │   ├── PostedPage
 │   ├── PostingPage
-│   └── ErrorPage.jsx
+│   └── ErrorPage
+├── utils           # Helper함수
 ├── App.jsx         # 루트 컴포넌트
 ├── App.css         # 전역 스타일
 ├── globals.css     # 공통 CSS
@@ -120,19 +122,11 @@ pnpm run dev
 http://localhost:5173 (기본값, 환경에 따라 달라질 수 있음)
 ```
 
-## 환경변수 설정
-
-- (추가 예정)
-
 ## 배포링크
 
-- (추가 예정)
+- [링크](https://fe19-team8.netlify.app/)
 
 ## 동작 시연
-
-- (추가 예정)
-
-## 개선 계획
 
 - (추가 예정)
 
