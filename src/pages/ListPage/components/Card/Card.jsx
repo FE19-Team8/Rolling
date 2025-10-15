@@ -52,7 +52,7 @@ export default function RollingPaperCard({
     'font-bold  text-lg md:text-2xl leading-9 pt-3 line-clamp-2 ' +
     (backgroundImageURL ? 'text-white' : 'text-gray900');
   const accentedTextStyle =
-    'inline-flex text-sm md:text-md font-bold leading-6' +
+    'inline-flex text-sm md:text-md font-bold leading-6 ' +
     (backgroundImageURL ? 'text-white' : 'text-gray700');
   const textStyle =
     'text-sm md:text-md leading-6 ' + (backgroundImageURL ? 'text-white' : 'text-gray700');
